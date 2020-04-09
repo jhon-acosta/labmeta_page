@@ -1,12 +1,9 @@
 import React from 'react';
-import logo from './logo.svg';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-      <h1>Hello!!!!</h1>
-      </header>
+    <div className="lg:bg-red-500 md:bg-green-400 sm:bg-black h-screen">
+      <h1 className="lg:text-6xl text-sm text-yellow-500 text-center">Hello!!!!</h1>
     </div>
   );
 }
