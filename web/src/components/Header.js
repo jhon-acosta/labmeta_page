@@ -7,7 +7,7 @@ class Header extends Component {
           <div className="w-full h-8 bg-green-500">
 
           </div>
-          <div className="w-full h-8 bg-yellow-500">
+          <div className="w-full h-24 bg-yellow-500">
             <h1>HEADER</h1>
           </div>
       </div>
