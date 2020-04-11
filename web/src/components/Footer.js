@@ -14,7 +14,10 @@ class Footer extends Component {
           <div className="flex flex-col px-4 w-64">
             <h1 className="text-xl">Nuestros Servicios</h1>
             <button className="text-left hover:text-yellow-600">Cardiología</button>
-            <button className="text-left hover:text-yellow-600">RayosX</button>
+            <button className="text-left hover:text-yellow-600"
+              onClick={ () => this.props.history.push("/rayos_x")}>
+              RayosX
+            </button>
             <button className="text-left hover:text-yellow-600">Ginecología</button>
             <button className="text-left hover:text-yellow-600">Ecografía</button>
             <button className="text-left hover:text-yellow-600">Hermatología</button>
@@ -40,7 +43,7 @@ class Footer extends Component {
             <div className="py-2">
               <h1 className="text-xl">Ubicación</h1>
               <p>
-                Av.Hungria N31-91 y Vancouver<br/>
+                Av. Hungria N31-91 y Vancouver<br/>
                 Diagonal a la gasolinera <br/>Petrocomercial <br/>
                 Quito-Ecuador
               </p>

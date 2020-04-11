@@ -9,9 +9,9 @@ class RayosX extends Component {
         return (
             <div>
                 <Header />
-                <div className="pt-8 pb-8 bg-gray-300">
-                    <h1 className="text-center text-5xl font-medium text-green-700">Rayos X</h1>
-                    <p className="text-center pl-32 pr-32 text-2xl text-green-700">
+                <div className="py-8 lg:px-32 md:px-32 px-8 bg-gray-300">
+                    <h1 className="text-center lg:text-4xl md:text-4xl text-2xl font-bold text-green-700">Rayos X</h1>
+                    <p className="text-center lg:text-2xl md:text-2xl text-xl text-green-700">
                         Los rayos X son un tipo de radiación llamada ondas
                         electromagnéticas. Las imágenes de rayos X muestran
                         el interior de su cuerpo en diferentes tonos de blanco
