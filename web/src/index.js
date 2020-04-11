@@ -5,6 +5,7 @@ import '../node_modules/react-responsive-carousel/lib/styles/carousel.min.css'
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import '../node_modules/@fortawesome/fontawesome-free/css/all.css';
+import RayosX from './pages/Rayos X/Rayos-X'
 
 import Home from './pages/Home';
 
@@ -12,6 +13,7 @@ render(
     <Router>
         <Switch>
           <Route exact path="/" component={ Home } />
+          <Route path="/rayos_x" component={ RayosX } />
           {/* <Route  path="/.." component={ .. } /> */}
           {/* <Route component={ Page404 } /> */}
         </Switch>
