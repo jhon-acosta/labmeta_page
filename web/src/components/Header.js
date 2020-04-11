@@ -1,37 +1,38 @@
 import React, { Component } from 'react';
-
-import Labmeta from '../Labmeta.jpeg'
+import { withRouter } from "react-router-dom";
 
 class Header extends Component {
   render() {
+    const logo = require("../assets/logo.jpeg")
     return (
-      <div>
-        <div className="w-full h-8 bg-green-400">
-        </div>
+      <div className="font-serif">
+        <div className="w-full h-6 bg-green-400"></div>
 
-        <div className="w-full h-24 bg-yellow-400">
-          <div className="float-left pl-24">
-            <img src={Labmeta} alt="/" className="w-28 h-24 inset-x-10" />
+        <div className="flex lg:flex-row flex-col justify-between items-center h-auto lg:px-32 px-8 py-2 bg-yellow-400">
+          <div className="flex">
+            <img src={ logo } alt="logo" className="w-28 h-24" />
           </div>
 
-          <div className="float-right">
-            <div className="float-left pr-32">
-              <h1 className="font-extrabold text-3xl">Llama hoy</h1>
-              <p>(+593) 987654321 <br /> (02) 321-456</p>
+          <div className="flex lg:flex-row md:flex-row flex-col items-center py-2">
+            <div className="px-4 hover:bg-yellow-500 hover:text-white">
+              <h1 className="font-bold text-md">Llama hoy:</h1>
+              <p>(+593) 987654321; (02) 321-456</p>
             </div>
 
-            <div className="float-right pr-48">
-              <h1 className="font-extrabold text-3xl">Horario de Apertura</h1>
-              <p>Lun–Vie: 07:00 am–16:00pm <br /> Sab: 07:00am–16:00pm</p>
+            <div className="px-4 hover:bg-yellow-500 hover:text-white">
+              <h1 className="font-bold text-md">Horario de Apertura:</h1>
+              <p>Lun–Vie: 07:00am–16:00pm <br /> Sab: 07:00am–16:00pm</p>
             </div>
           </div>
         </div>
+
         <hr className="border-green-400" />
-        <div className="h-10 pl-24 bg-yellow-500">
-          <ul className="flex pr-4">
-            <li className="pr-20 pt-1"><a href="/" className="text-xl font-medium">Inicio <span className=""></span></a></li>
 
-            <li className="pr-20 pt-1">
+        <div className="h-auto bg-yellow-400 lg:px-32 px-8 flex lg:justify-start justify-center">
+          <div className="flex lg:flex-row md:flex-row flex-col py-1">
+            <button className="text-xl px-4 hover:bg-yellow-500 hover:text-white">Inicio</button>
+
+            {/* <li className="pr-20 pt-1">
               <a href="/" className="text-xl font-medium">Servicios <span className=""></span></a>
               
                 <div className="sub-menu-items bg-gray-500 hover:block">
@@ -45,15 +46,15 @@ class Header extends Component {
                   </ul>
                 </div>
 
-            </li>
+            </li> */}
 
-            <li className="pr-20 pt-1"><a href="/" className="text-xl font-medium">Promociones <span className="list-inline-from-md"></span></a></li>
-            <li className="pr-20 pt-1"><a href="/" className="text-xl font-medium">¿Quíenes Somos? <span className="list-inline-from-md"></span></a></li>
-          </ul>
+            <button className="text-xl px-4 hover:bg-yellow-500 hover:text-white">Promociones</button>
+            <button className="text-xl px-4 hover:bg-yellow-500 hover:text-white">¿Quienes Somos?</button>
+          </div>
         </div>
       </div>
     )
   }
 }
 
-export default Header;
+export default withRouter(Header);

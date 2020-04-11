@@ -9,15 +9,15 @@ class CarouselComponent extends Component {
         <Carousel showArrows={true} showThumbs={false} showStatus={false} autoPlay infiniteLoop={true} swipeable transitionTime={3000} interval={6000}>
             <div>
                 <img src={ slide1 } alt="pic1" />
-                <p className="legend">Labmeta S.A test1.</p>
+                {/* <p className="legend">Labmeta S.A test1.</p> */}
             </div>
             <div>
                 <img src={ slide1 } alt="pic2" />
-                <p className="legend">Labmeta S.A test2.</p>
+                {/* <p className="legend">Labmeta S.A test2.</p> */}
             </div>
             <div>
                 <img src={ slide1 } alt="pic3" />
-                <p className="legend">Labmeta S.A test3.</p>
+                {/* <p className="legend">Labmeta S.A test3.</p> */}
             </div>
         </Carousel>
     )

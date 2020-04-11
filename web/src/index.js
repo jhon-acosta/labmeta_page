@@ -5,7 +5,6 @@ import '../node_modules/react-responsive-carousel/lib/styles/carousel.min.css'
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import '../node_modules/@fortawesome/fontawesome-free/css/all.css';
-import '../node_modules/alpinejs'
 
 import Home from './pages/Home';
 
