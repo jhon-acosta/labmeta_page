@@ -6,7 +6,7 @@ class CarouselComponent extends Component {
   render() {
       const slide1 = require("../assets/components/test1.jpg")
     return(
-        <Carousel showArrows={true} showThumbs={false} showStatus={false} autoPlay infiniteLoop={true}>
+        <Carousel showArrows={true} showThumbs={false} showStatus={false} autoPlay infiniteLoop={true} swipeable transitionTime={3000} interval={6000}>
             <div>
                 <img src={ slide1 } alt="pic1" />
                 <p className="legend">Labmeta S.A test1.</p>
