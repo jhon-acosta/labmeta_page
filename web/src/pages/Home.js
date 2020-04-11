@@ -3,6 +3,7 @@ import { withRouter } from "react-router-dom";
 
 import Header from '../components/Header';
 import Carousel from '../components/Carrousel';
+import Footer from "../components/Footer"
 
 class Home extends Component {
   render() {
@@ -22,6 +23,7 @@ class Home extends Component {
             carta de presentación.</p>
           </div>
         </div>
+        <Footer/>
       </div>
     )
   }
