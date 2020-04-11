@@ -49,7 +49,7 @@ class Header extends Component {
             </li> */}
 
             <button className="text-xl px-4 hover:bg-yellow-500 hover:text-white">Promociones</button>
-            <button className="text-xl px-4 hover:bg-yellow-500 hover:text-white">¿Quienes Somos?</button>
+            <button className="text-xl px-4 hover:bg-yellow-500 hover:text-white">¿Quíenes Somos?</button>
           </div>
         </div>
       </div>

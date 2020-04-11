@@ -5,13 +5,13 @@ class Footer extends Component {
   render() {
     const logo2 = require("../assets/logo2.jpeg")
     return (
-      <div className="bg-black text-white h-auto">
-        <div className="flex lg:flex-row md:flex-row flex-col justify-between px-8 py-4 items-center">
+      <div className="bg-black text-white h-auto font-serif">
+        <div className="flex lg:flex-row md:flex-row flex-col justify-between px-4 py-4 items-center">
           <div className="flex flex-col px-4">
             <img src={ logo2 } alt="logo2" className="w-64 h-16 rounded-md" />
           </div>
 
-          <div className="flex flex-col px-4">
+          <div className="flex flex-col px-4 w-64">
             <h1 className="text-xl">Nuestros Servicios</h1>
             <button className="text-left hover:text-yellow-600">Cardiología</button>
             <button className="text-left hover:text-yellow-600">RayosX</button>
@@ -20,7 +20,7 @@ class Footer extends Component {
             <button className="text-left hover:text-yellow-600">Hermatología</button>
           </div>
 
-          <div className="flex flex-col px-4">
+          <div className="flex flex-col px-4 w-64">
             <div className="py-2">
               <h1 className="text-xl">Horarios de Atención</h1>
               <p>Lun–Vie: 07:00am–16:00pm <br /> Sab: 07:00am–16:00pm</p>
@@ -36,7 +36,7 @@ class Footer extends Component {
             </div>
           </div>
 
-          <div className="flex flex-col px-4">
+          <div className="flex flex-col px-4 w-64">
             <div className="py-2">
               <h1 className="text-xl">Ubicación</h1>
               <p>
