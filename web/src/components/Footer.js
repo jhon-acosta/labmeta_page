@@ -5,8 +5,8 @@ class Footer extends Component {
   render() {
     const logo2 = require("../assets/logo2.jpeg")
     return (
-      <div className="bg-black text-white h-auto font-serif">
-        <div className="flex lg:flex-row md:flex-row flex-col justify-between px-4 py-4 items-center">
+      <div className="bg-gray-800 text-white h-auto">
+        <div className="flex lg:flex-row md:flex-row flex-col justify-between px-8 py-4 items-center">
           <div className="flex flex-col px-4">
             <img src={ logo2 } alt="logo2" className="w-64 h-16 rounded-md" />
           </div>
