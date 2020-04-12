@@ -5,15 +5,17 @@ import '../node_modules/react-responsive-carousel/lib/styles/carousel.min.css'
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import '../node_modules/@fortawesome/fontawesome-free/css/all.css';
-import RayosX from './pages/Rayos X/Rayos-X'
 
 import Home from './pages/Home';
+import RayosX from './pages/Rayos X/Rayos-X'
+import QuienesSomos from './pages/Quienes somos/QuienesSomos'
 
 render(
     <Router>
         <Switch>
           <Route exact path="/" component={ Home } />
-          <Route path="/rayos_x" component={ RayosX } />
+          <Route path="/rayx" component={ RayosX } />
+          <Route path="/whoweare" component={ QuienesSomos } />
           {/* <Route  path="/.." component={ .. } /> */}
           {/* <Route component={ Page404 } /> */}
         </Switch>
