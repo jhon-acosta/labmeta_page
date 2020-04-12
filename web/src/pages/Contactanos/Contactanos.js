@@ -3,7 +3,7 @@ import { withRouter } from "react-router-dom";
 
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
-import Mapa from './Mapa'
+// import Mapa from './Mapa'
 
 
 class Contactanos extends Component{
@@ -12,7 +12,7 @@ class Contactanos extends Component{
             <div>
                 <Header/>
                 <div>                    
-                {Mapa}
+                {/* {Mapa} */}
                  </div>
                 <Footer/>
                 

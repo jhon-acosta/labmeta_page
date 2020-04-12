@@ -82,7 +82,7 @@ class Header extends Component {
               ¿Quiénes somos?
             </button>
             <button className="lg:text-xl md:text-xl text-sm px-4 hover:bg-green-500 hover:text-white"
-              onClick={ () => this.props.history.push("/")}>
+              onClick={ () => this.props.history.push("/contactus")}>
               <i className="fas fa-phone-alt px-1"></i>
               Contactanos
             </button>
