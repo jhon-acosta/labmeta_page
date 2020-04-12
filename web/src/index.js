@@ -9,6 +9,7 @@ import '../node_modules/@fortawesome/fontawesome-free/css/all.css';
 import Home from './pages/Home';
 import RayosX from './pages/Rayos X/Rayos-X'
 import QuienesSomos from './pages/Quienes somos/QuienesSomos'
+import Contactanos from './pages/Contactanos/Contactanos'
 
 render(
     <Router>
@@ -16,6 +17,7 @@ render(
           <Route exact path="/" component={ Home } />
           <Route path="/rayx" component={ RayosX } />
           <Route path="/whoweare" component={ QuienesSomos } />
+          <Route path="/contactus" component={ Contactanos } />
           {/* <Route  path="/.." component={ .. } /> */}
           {/* <Route component={ Page404 } /> */}
         </Switch>
