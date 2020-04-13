@@ -3,5 +3,10 @@
 @tailwind utilities;
 
 .group:hover .group-hover\:block {
-    display: block;
+  display: block;
+}
+
+.leaflet-container {
+  width: 100%;
+  height: 300px;
 }

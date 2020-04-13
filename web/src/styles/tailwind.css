@@ -13188,6 +13188,11 @@ video {
   display: block;
 }
 
+.leaflet-container {
+  width: 100%;
+  height: 300px;
+}
+
 @media (min-width: 640px) {
   .sm\:sr-only {
     position: absolute;
