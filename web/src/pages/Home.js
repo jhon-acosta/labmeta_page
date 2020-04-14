@@ -76,7 +76,10 @@ class Home extends Component {
         <div className="flex flex-col items-center lg:px-24 justify-center py-4 bg-yellow-400">
           <h1 className="lg:text-3xl text-2xl font-bold">Nuestros servicios</h1>
           <div className="flex flex-wrap justify-center">
-            <div className="flex flex-col py-4 px-4 mx-2 items-center text-center">
+            <div
+              className="flex flex-col py-4 px-4 mx-2 items-center text-center cursor-pointer"
+              onClick={() => this.props.history.push("/cardiology")}
+            >
               <img
                 alt="pic"
                 src={image1}
@@ -86,7 +89,10 @@ class Home extends Component {
                 Cardiología
               </p>
             </div>
-            <div className="flex flex-col py-4 px-4 mx-2 items-center text-center">
+            <div
+              className="flex flex-col py-4 px-4 mx-2 items-center text-center cursor-pointer"
+              onClick={() => this.props.history.push("/rayx")}
+            >
               <img
                 alt="pic"
                 src={image1}
@@ -96,7 +102,10 @@ class Home extends Component {
                 Rayos X
               </p>
             </div>
-            <div className="flex flex-col py-4 px-4 mx-2 items-center text-center">
+            <div
+              className="flex flex-col py-4 px-4 mx-2 items-center text-center cursor-pointer"
+              onClick={() => this.props.history.push("/gynecology")}
+            >
               <img
                 alt="pic"
                 src={image1}
@@ -106,7 +115,10 @@ class Home extends Component {
                 Ginecología
               </p>
             </div>
-            <div className="flex flex-col py-4 px-4 mx-2 items-center text-center">
+            <div
+              className="flex flex-col py-4 px-4 mx-2 items-center text-center cursor-pointer"
+              onClick={() => this.props.history.push("/echography")}
+            >
               <img
                 alt="pic"
                 src={image1}
@@ -116,7 +128,10 @@ class Home extends Component {
                 Ecografía
               </p>
             </div>
-            <div className="flex flex-col py-4 px-4 mx-2 items-center text-center">
+            <div
+              className="flex flex-col py-4 px-4 mx-2 items-center text-center cursor-pointer"
+              onClick={() => this.props.history.push("/hermatology")}
+            >
               <img
                 alt="pic"
                 src={image1}

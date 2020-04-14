@@ -22,13 +22,22 @@ class Footer extends Component {
             >
               RayosX
             </button>
-            <button className="text-left hover:text-yellow-600">
+            <button
+              className="text-left hover:text-yellow-600"
+              onClick={() => this.props.history.push("/gynecology")}
+            >
               Ginecología
             </button>
-            <button className="text-left hover:text-yellow-600">
+            <button
+              className="text-left hover:text-yellow-600"
+              onClick={() => this.props.history.push("/echography")}
+            >
               Ecografía
             </button>
-            <button className="text-left hover:text-yellow-600">
+            <button
+              className="text-left hover:text-yellow-600"
+              onClick={() => this.props.history.push("/hermatology")}
+            >
               Hermatología
             </button>
           </div>
