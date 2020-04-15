@@ -16,7 +16,7 @@ class Header extends Component {
           <div className="flex lg:flex-row md:flex-row sm:flex-row flex-col lg:items-center py-2">
             <div className="px-4 flex-col flex">
               <h1 className="font-bold lg:text-2xl md:text-2xl text-sm">
-              <i className="fas fa-phone-alt px-1"></i>
+                <i className="fas fa-phone-alt px-1"></i>
                 Llama hoy
               </h1>
               <p className="lg:text-md text-sm pl-8">(+593)987654321</p>
@@ -25,10 +25,12 @@ class Header extends Component {
 
             <div className="px-4 flex-col flex">
               <h1 className="font-bold lg:text-2xl md:text-2xl text-sm">
-              <i className="fas fa-clock px-1"></i>
+                <i className="fas fa-clock px-1"></i>
                 Horarios de atención
               </h1>
-              <p className="lg:text-md text-sm pl-8">Lun–Vie: 07:00am–16:00pm</p>
+              <p className="lg:text-md text-sm pl-8">
+                Lun–Vie: 07:00am–16:00pm
+              </p>
               <p className="lg:text-md text-sm pl-8">Sab: 07:00am–16:00pm</p>
             </div>
           </div>

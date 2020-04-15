@@ -12,33 +12,39 @@ class Contactanos extends Component {
     return (
       <div className="font-hairline">
         <Header />
-        <div className="bg-gray-300 h-64 w-full">
+        <div className="bg-gray-300 w-full py-4">
           <h1 className="text-center lg:text-4xl md:text-4xl text-2xl font-bold text-green-700">
             Contáctanos
           </h1>
-          <div className="float-left pl-64 pt-8">
-            <h1 className="text-center lg:text-2xl pb-10 md:text-4xl text-2xl font-seminbold text-green-700">
-              Vía Telefónica
-            </h1>
-            <p>
-              <i className="fas fa-phone-alt px-1"></i> (02) 2503238 - 2503037
-            </p>
-            <p>
-              <i className="fas fa-mobile-alt px-1"></i> (+593) 996031288{" "}
-            </p>
-          </div>
-          <div className="float-right pr-64 pt-8">
-            <h1 className="text-center lg:text-2xl pb-10 md:text-4xl text-2xl font-seminbold text-green-700">
-              Vía E-mail
-            </h1>
-            <p>
-              <i className="fas fa-envelope-square px-1"></i> rlabmeta@gmail.com
-            </p>
+          <div className="flex justify-between lg:flex-row md:flex-row flex-col lg:px-48 md:px-32 px-8 text-center items-center">
+            <div className="py-1">
+              <h1 className="text-center text-2xl font-seminbold text-green-700">
+                Vía Telefónica
+              </h1>
+              <div className="flex flex-col">
+                <p>
+                  <i className="fas fa-phone-alt px-1"></i> (02) 2503238 -
+                  2503037
+                </p>
+                <p>
+                  <i className="fas fa-mobile-alt px-1"></i> (+593) 996031288
+                </p>
+              </div>
+            </div>
+            <div className="py-1">
+              <h1 className="text-center text-2xl font-seminbold text-green-700">
+                Vía E-mail
+              </h1>
+              <p className="flex items-center">
+                <i className="fas fa-envelope-square px-1"></i>
+                rlabmeta@gmail.com
+              </p>
+            </div>
           </div>
         </div>
         <div>
-          <div className="text-center bg-gray-300 pb-4">
-            <h1 className="lg:text-2xl pb-6 md:text-4xl text-2xl font-seminbold text-green-700">
+          <div className="text-center bg-gray-300">
+            <h1 className="lg:text-2xl md:text-4xl text-2xl font-seminbold text-green-700">
               Ubicados en:
             </h1>
             <p>
