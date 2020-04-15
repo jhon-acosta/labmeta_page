@@ -7,7 +7,7 @@ class Cardiologia extends Component {
   render() {
     const cardiologia_img = require("./cardiologia_img.jpg");
     return (
-      <div className="font-serif">
+      <div className="font-hairline">
         <Header />
         <div className="py-8 lg:px-32 md:px-32 px-8 bg-gray-300 flex flex-col">
           <h1 className="text-center lg:text-4xl md:text-4xl text-2xl font-bold text-green-700">

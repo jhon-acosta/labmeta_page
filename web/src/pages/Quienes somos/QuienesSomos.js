@@ -7,7 +7,7 @@ class QuienesSomos extends Component {
   render() {
     const logo = require("../../assets/logo.jpeg");
     return (
-      <div className="font-serif">
+      <div className="font-hairline">
         <Header />
         <div className="flex bg-white h-auto">
           <div className="flex flex-col self-center items-center text-center lg:text-left px-8 md:px-12 lg:w-1/2">
