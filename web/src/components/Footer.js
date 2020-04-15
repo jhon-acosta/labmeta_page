@@ -13,27 +13,35 @@ class Footer extends Component {
 
           <div className="flex flex-col px-4 py-4 w-64">
             <h1 className="text-xl">Nuestros Servicios.</h1>
-            <button className="text-left hover:text-yellow-600">
-            <i className="fas fa-arrow-right px-1"></i>
+            <button className="text-left hover:text-yellow-600"
+             onClick={() => this.props.history.push("/cardiology")}>
+              <i className="fas fa-arrow-right px-1"></i>
               Cardiología
             </button>
             <button
               className="text-left hover:text-yellow-600"
               onClick={() => this.props.history.push("/rayx")}
             >
-                          <i className="fas fa-arrow-right px-1"></i>
+              <i className="fas fa-arrow-right px-1"></i>
               RayosX
             </button>
-            <button className="text-left hover:text-yellow-600">
-            <i className="fas fa-arrow-right px-1"></i>
+            <button className="text-left hover:text-yellow-600"
+              onClick={() => this.props.history.push("/gynecology")}>
+              <i className="fas fa-arrow-right px-1"></i>
               Ginecología
             </button>
-            <button className="text-left hover:text-yellow-600">
-            <i className="fas fa-arrow-right px-1"></i>
+            <button
+              className="text-left hover:text-yellow-600"
+              onClick={() => this.props.history.push("/echography")}
+            >
+              <i className="fas fa-arrow-right px-1"></i>
               Ecografía
             </button>
-            <button className="text-left hover:text-yellow-600">
-            <i className="fas fa-arrow-right px-1"></i>
+            <button
+              className="text-left hover:text-yellow-600"
+              onClick={() => this.props.history.push("/hermatology")}
+            >
+              <i className="fas fa-arrow-right px-1"></i>
               Hermatología
             </button>
           </div>

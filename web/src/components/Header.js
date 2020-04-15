@@ -52,7 +52,7 @@ class Header extends Component {
               <div className="hidden group-hover:block absolute w-full bg-yellow-400 z-10">
                 <button
                   className="block text-left py-3 lg:px-3 md:px-3 px-1 hover:bg-green-500 hover:text-white text-sm w-full"
-                  onClick={() => this.props.history.push("/")}
+                  onClick={() => this.props.history.push("/cardiology")}
                 >
                   <i className="fas fa-chevron-right px-1"></i>
                   Cardiología
@@ -66,34 +66,34 @@ class Header extends Component {
                 </button>
                 <button
                   className="block text-left py-3 lg:px-3 md:px-3 px-1 hover:bg-green-500 hover:text-white text-sm w-full"
-                  onClick={() => this.props.history.push("/")}
+                  onClick={() => this.props.history.push("/gynecology")}
                 >
                   <i className="fas fa-chevron-right px-1"></i>
                   Ginecología
                 </button>
                 <button
                   className="block text-left py-3 lg:px-3 md:px-3 px-1 hover:bg-green-500 hover:text-white text-sm w-full"
-                  onClick={() => this.props.history.push("/")}
+                  onClick={() => this.props.history.push("/echography")}
                 >
                   <i className="fas fa-chevron-right px-1"></i>
                   Ecografía
                 </button>
                 <button
                   className="block text-left py-3 lg:px-3 md:px-3 px-1 hover:bg-green-500 hover:text-white text-sm w-full"
-                  onClick={() => this.props.history.push("/")}
+                  onClick={() => this.props.history.push("/hermatology")}
                 >
                   <i className="fas fa-chevron-right px-1"></i>
                   Hermatología
                 </button>
               </div>
             </div>
-            <button
+            {/* <button
               className="lg:text-xl md:text-xl text-sm px-4 hover:bg-green-500 hover:text-white"
               onClick={() => this.props.history.push("/")}
             >
               <i className="fas fa-percentage px-1"></i>
               Promociones
-            </button>
+            </button> */}
             <button
               className="lg:text-xl md:text-xl text-sm px-4 hover:bg-green-500 hover:text-white"
               onClick={() => this.props.history.push("/whoweare")}
