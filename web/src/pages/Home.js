@@ -9,7 +9,7 @@ class Home extends Component {
   render() {
     const image1 = require("../assets/home/test1.jpg");
     return (
-      <div className="font-serif">
+      <div className="font-hairline">
         <Header />
 
         <Carousel />

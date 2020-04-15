@@ -5,7 +5,7 @@ class Header extends Component {
   render() {
     const logo = require("../assets/logo.jpeg");
     return (
-      <div className="font-serif">
+      <div className="font-hairline">
         <div className="w-full h-6 bg-green-400 opacity-75"></div>
 
         <div className="flex flex-row lg:justify-between md:justify-between justify-center items-center h-auto lg:px-32 md:px-20 px-2 py-2 bg-yellow-400">
@@ -16,18 +16,20 @@ class Header extends Component {
           <div className="flex lg:flex-row md:flex-row sm:flex-row flex-col lg:items-center py-2">
             <div className="px-4 flex-col flex">
               <h1 className="font-bold lg:text-2xl md:text-2xl text-sm">
-                Llama hoy:
+              <i className="fas fa-phone-alt px-1"></i>
+                Llama hoy
               </h1>
-              <p className="lg:text-md text-sm">(+593)987654321</p>
-              <p className="lg:text-md text-sm">(02) 321-456</p>
+              <p className="lg:text-md text-sm pl-8">(+593)987654321</p>
+              <p className="lg:text-md text-sm pl-8">(02) 321-456</p>
             </div>
 
             <div className="px-4 flex-col flex">
               <h1 className="font-bold lg:text-2xl md:text-2xl text-sm">
-                Horarios de atención:
+              <i className="fas fa-clock px-1"></i>
+                Horarios de atención
               </h1>
-              <p className="lg:text-md text-sm">Lun–Vie: 07:00am–16:00pm</p>
-              <p className="lg:text-md text-sm">Sab: 07:00am–16:00pm</p>
+              <p className="lg:text-md text-sm pl-8">Lun–Vie: 07:00am–16:00pm</p>
+              <p className="lg:text-md text-sm pl-8">Sab: 07:00am–16:00pm</p>
             </div>
           </div>
         </div>
@@ -40,7 +42,7 @@ class Header extends Component {
               className="lg:text-xl md:text-xl text-sm px-4 hover:bg-green-500 hover:text-white"
               onClick={() => this.props.history.push("/")}
             >
-              <i className="fas fa-home"></i>
+              <i className="fas fa-clinic-medical"></i>
               Inicio
             </button>
 
@@ -105,7 +107,7 @@ class Header extends Component {
               className="lg:text-xl md:text-xl text-sm px-4 hover:bg-green-500 hover:text-white"
               onClick={() => this.props.history.push("/contactus")}
             >
-              <i className="fas fa-phone-alt px-1"></i>
+              <i className="fas fa-headset px-1"></i>
               Contactanos
             </button>
           </div>
