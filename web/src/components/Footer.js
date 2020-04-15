@@ -13,45 +13,49 @@ class Footer extends Component {
 
           <div className="flex flex-col px-4 py-4 w-64">
             <h1 className="text-xl">Nuestros Servicios.</h1>
-            <button className="text-left hover:text-yellow-600">
+            <button className="text-left hover:text-yellow-600"
+             onClick={() => this.props.history.push("/cardiology")}>
+              <i className="fas fa-arrow-right px-1"></i>
               Cardiología
             </button>
             <button
               className="text-left hover:text-yellow-600"
               onClick={() => this.props.history.push("/rayx")}
             >
+              <i className="fas fa-arrow-right px-1"></i>
               RayosX
             </button>
-            <button
-              className="text-left hover:text-yellow-600"
-              onClick={() => this.props.history.push("/gynecology")}
-            >
+            <button className="text-left hover:text-yellow-600"
+              onClick={() => this.props.history.push("/gynecology")}>
+              <i className="fas fa-arrow-right px-1"></i>
               Ginecología
             </button>
             <button
               className="text-left hover:text-yellow-600"
               onClick={() => this.props.history.push("/echography")}
             >
+              <i className="fas fa-arrow-right px-1"></i>
               Ecografía
             </button>
             <button
               className="text-left hover:text-yellow-600"
               onClick={() => this.props.history.push("/hermatology")}
             >
+              <i className="fas fa-arrow-right px-1"></i>
               Hermatología
             </button>
           </div>
 
           <div className="flex flex-col px-4 py-4 w-64">
             <h1 className="text-xl">Horarios de Atención.</h1>
-            <p>Lun–Vie: 07:00am–16:00pm</p>
+            <p>Lun–Vie: 07:00am–16:00pm </p>
             <p>Sab: 07:00am–16:00pm</p>
           </div>
 
           <div className="flex flex-col px-4 py-4 w-64">
             <div className="py-2">
               <h1 className="text-xl">Ubicación.</h1>
-              <p>
+              <p><i className="fas fa-map-marker-alt px-1"></i>
                 Av. Hungria N31-91 y Vancouver, diagonal a la gasolinera
                 Petrocomercial
               </p>
@@ -60,10 +64,10 @@ class Footer extends Component {
           </div>
 
           <div className="flex flex-col px-4 py-4 w-64">
-            <h1 className="text-xl">Comunícate con nosotros.</h1>
-            <p>Telf :(02) 2503238 - 2503037</p>
-            <p>Cel : 0996031288 </p>
-            <p>e-mail : rlabmeta@gmail.com</p>
+            <h1 className="text-xl">Comunícate con Nosotros.</h1>
+            <p><i className="fas fa-phone-alt px-1"></i> (02) 2503238 - 2503037</p>
+            <p><i className="fas fa-mobile-alt px-1"></i> 0996031288 </p>
+            <p><i className="fas fa-envelope-square px-1"></i> rlabmeta@gmail.com</p>
           </div>
         </div>
       </div>
