@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 class QuienesSomos extends Component {
   render() {

@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { Map, Marker, Popup, TileLayer } from "react-leaflet";
 
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 class Contactanos extends Component {
   LabmetaLocation = [-0.1911283, -78.4894105];

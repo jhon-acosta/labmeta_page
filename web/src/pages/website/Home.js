@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 
-import Header from "../components/Header";
-import Carousel from "../components/Carrousel";
-import Footer from "../components/Footer";
+import Header from "./components/Header";
+import Carousel from "./components/Carrousel";
+import Footer from "./components/Footer";
 
 class Home extends Component {
   render() {
-    const image1 = require("../assets/home/test1.jpg");
+    const home1 = require("../../assets/website/home1.jpg");
     return (
       <div className="font-hairline">
         <Header />
@@ -17,7 +17,7 @@ class Home extends Component {
         <div className="flex items-center justify-center px-12 py-12">
           <div className="hidden lg:block lg:w-1/2 px-4">
             <div className="h-full object-cover">
-              <img alt="pic" src={image1} className="opacity-75" />
+              <img alt="pic" src={home1} className="opacity-75" />
             </div>
           </div>
           <div className="lg:w-1/2 w-full">
@@ -82,7 +82,7 @@ class Home extends Component {
             >
               <img
                 alt="pic"
-                src={image1}
+                src={home1}
                 className="lg:h-56 lg:w-56 md:h-56 md:w-56 sm:h-48 sm:w-48 h-32 w-32"
               />
               <p className="py-2 lg:text-xl md:text-xl text-sm font-bold">
@@ -95,7 +95,7 @@ class Home extends Component {
             >
               <img
                 alt="pic"
-                src={image1}
+                src={home1}
                 className="lg:h-56 lg:w-56 md:h-56 md:w-56 sm:h-48 sm:w-48 h-32 w-32"
               />
               <p className="py-2 lg:text-xl md:text-xl text-sm font-bold">
@@ -108,7 +108,7 @@ class Home extends Component {
             >
               <img
                 alt="pic"
-                src={image1}
+                src={home1}
                 className="lg:h-56 lg:w-56 md:h-56 md:w-56 sm:h-48 sm:w-48 h-32 w-32"
               />
               <p className="py-2 lg:text-xl md:text-xl text-sm font-bold">
@@ -121,7 +121,7 @@ class Home extends Component {
             >
               <img
                 alt="pic"
-                src={image1}
+                src={home1}
                 className="lg:h-56 lg:w-56 md:h-56 md:w-56 sm:h-48 sm:w-48 h-32 w-32"
               />
               <p className="py-2 lg:text-xl md:text-xl text-sm font-bold">
@@ -134,7 +134,7 @@ class Home extends Component {
             >
               <img
                 alt="pic"
-                src={image1}
+                src={home1}
                 className="lg:h-56 lg:w-56 md:h-56 md:w-56 sm:h-48 sm:w-48 h-32 w-32"
               />
               <p className="py-2 lg:text-xl md:text-xl text-sm font-bold">

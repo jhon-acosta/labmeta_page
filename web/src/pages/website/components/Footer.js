@@ -3,7 +3,7 @@ import { withRouter } from "react-router-dom";
 
 class Footer extends Component {
   render() {
-    const logo2 = require("../assets/logo2.jpeg");
+    const logo2 = require("../../../assets/logo2.jpeg");
     return (
       <div className="bg-gray-800 text-white h-auto font-hairline">
         <div className="flex lg:flex-row md:flex-row flex-col justify-between px-8 py-4 items-center">

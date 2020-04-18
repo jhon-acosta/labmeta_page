@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 class RayosX extends Component {
   render() {
-    const rayosx_img = require("./rayosx-img.jpg");
+    const rayosx1 = require("../../assets/website/rayosx1.jpg");
     return (
       <div className="font-hairline">
         <Header />
@@ -32,7 +32,7 @@ class RayosX extends Component {
             radiografías de tórax pueden detectar neumonía. Las mamografías
             utilizan rayos X para detectar el cáncer de mama.
           </p>
-          <img src={rayosx_img} alt="pic" className="py-2" />
+          <img src={rayosx1} alt="pic" className="py-2" />
           <p className="text-center lg:text-4xl md:text-3xl text-2xl font-bold py-4 text-green-700">
             Llame a LABMETA S.A, Laboratorios Médicos de Tecnología Avanzada
           </p>

@@ -7,18 +7,23 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "../node_modules/@fortawesome/fontawesome-free/css/all.css";
 import "./styles/leaflet/leaflet.css";
 
-import Home from "./pages/Home";
-import RayosX from "./pages/Rayos X/Rayos-X";
-import QuienesSomos from "./pages/Quienes somos/QuienesSomos";
-import Contactanos from "./pages/Contactanos/Contactanos";
-import Cardiologia from "./pages/Cardiologia/Cardiologia";
-import Ecografia from "./pages/Ecografia/Ecografia";
-import Ginecologia from "./pages/Ginecologia/Ginecologia";
-import Hermatologia from "./pages/Hermatologia/Hermatologia";
+// WEBSITES ROUTES
+import Home from "./pages/website/Home";
+import RayosX from "./pages/website/Rayos-X";
+import QuienesSomos from "./pages/website/QuienesSomos";
+import Contactanos from "./pages/website/Contactanos";
+import Cardiologia from "./pages/website/Cardiologia";
+import Ecografia from "./pages/website/Ecografia";
+import Ginecologia from "./pages/website/Ginecologia";
+import Hermatologia from "./pages/website/Hermatologia";
+
+// APPOINMENT SYSTEM ROUTES
+import Index from "./pages/appointment_system/index";
 
 render(
   <Router>
     <Switch>
+      {/* WEBSITES ROUTES */}
       <Route exact path="/" component={Home} />
       <Route path="/whoweare" component={QuienesSomos} />
       <Route path="/contactus" component={Contactanos} />
@@ -27,6 +32,11 @@ render(
       <Route path="/echography" component={Ecografia} />
       <Route path="/gynecology" component={Ginecologia} />
       <Route path="/hermatology" component={Hermatologia} />
+
+      {/* APPOINMENT SYSTEM ROUTES */}
+      <Route path="/citas" component={Index} />
+
+      {/* EXTRAS PAGES */}
       {/* <Route component={ Page404 } /> */}
     </Switch>
   </Router>,

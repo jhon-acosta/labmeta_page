@@ -3,7 +3,7 @@ import { withRouter } from "react-router-dom";
 
 class Header extends Component {
   render() {
-    const logo = require("../assets/logo.jpeg");
+    const logo = require("../../../assets/logo.jpeg");
     return (
       <div className="font-hairline">
         <div className="w-full h-6 bg-green-400 opacity-75"></div>
@@ -38,7 +38,7 @@ class Header extends Component {
 
         <hr className="border-green-400" />
 
-        <div className="h-auto bg-yellow-400 lg:px-32 md:px-20 px-2">
+        <div className="h-auto bg-yellow-400 lg:px-32 md:px-20 px-2 justify-between flex items-center">
           <div className="flex flex-row flex-wrap justify-center py-1 lg:justify-start md:justify-start">
             <button
               className="lg:text-xl md:text-xl text-sm px-4 hover:bg-green-500 hover:text-white"
@@ -111,6 +111,15 @@ class Header extends Component {
             >
               <i className="fas fa-headset px-1"></i>
               Contactanos
+            </button>
+          </div>
+          <div>
+            <button
+              className="lg:text-xl md:text-xl text-sm px-4 hover:bg-green-500 hover:text-white"
+              onClick={() => this.props.history.push("/citas")}
+            >
+              <i className="fas fa-user-plus px-1"></i>
+              Consulta médica
             </button>
           </div>
         </div>

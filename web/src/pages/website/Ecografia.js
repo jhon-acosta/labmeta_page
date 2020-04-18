@@ -1,34 +1,33 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
-class Hermatologia extends Component {
+class Ecografia extends Component {
   render() {
-    const hermatologia_img = require("./hermatologia_img.jpg");
+    const ecografia1 = require("../../assets/website/ecografia1.jpg");
     return (
       <div className="font-hairline">
         <Header />
         <div className="py-8 lg:px-32 md:px-32 px-8 bg-gray-300 flex flex-col">
           <h1 className="text-center lg:text-4xl md:text-4xl text-2xl font-bold text-green-700">
-            Hermatología
+            Ecografía
           </h1>
           <p className="text-justify lg:text-2xl md:text-2xl text-md text-green-700">
-            Es la especialidad médica que se ocupa del estudio, diagnóstico,
-            tratamiento y prevención de las enfermedades de la sangre y los
-            órganos que participan en su producción, como son la médula ósea, el
-            bazo o los ganglios, entre otros.
+            La ecografía o ultrasonido es un tipo de imagen. Utiliza ondas
+            sonoras de alta frecuencia para observar órganos y estructuras al
+            interior del cuerpo.
           </p>
           <p className="text-justify lg:px-32 py-2 lg:text-xl md:text-xl text-sm">
-            Asimismo , se ocupa de los componentes de la sangre (glóbulos rojos,
-            eritrocitos, plaquetas, leucocitos, hemoglobina, plasma, etc.) y de
-            sus características (mecanismo de coagulación, etc.)
+            Los profesionales de la salud los usan para ver el corazón, los
+            vasos sanguíneos, los riñones, el hígado y otros órganos.
           </p>
           <p className="text-justify lg:px-32 py-2 lg:text-xl md:text-xl text-sm">
-            Gestión y diagnóstico biológico en laboratorio de determinaciones
-            hematológicas básicas o especiales (análisis de sangre).
+            Durante el embarazo, los médicos usan las pruebas con ultrasonido
+            para observar al feto. A diferencia de las radiografías, la
+            ecografía no expone a la radiación.
           </p>
-          <img src={hermatologia_img} alt="pic" className="py-2" />
+          <img src={ecografia1} alt="pic" className="py-2" />
           <p className="text-center lg:text-4xl md:text-3xl text-2xl font-bold py-4 text-green-700">
             Llame a LABMETA S.A, Laboratorios Médicos de Tecnología Avanzada
           </p>
@@ -41,7 +40,7 @@ class Hermatologia extends Component {
           </p>
 
           <p className="text-center text-green-700 text-2xl font-bold py-2">
-            COSTO DEL SERVICIO : $ 109.99
+            COSTO DEL SERVICIO : $ 74.99
           </p>
         </div>
         <Footer />
@@ -50,4 +49,4 @@ class Hermatologia extends Component {
   }
 }
 
-export default withRouter(Hermatologia);
+export default withRouter(Ecografia);
