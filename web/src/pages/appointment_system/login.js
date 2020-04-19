@@ -8,11 +8,11 @@ import { withRouter } from "react-router-dom";
 class Login extends Component {
   render() {
     const logo = require('../../assets/logo.jpeg')
-    const longin = require('../../assets/website/login.png')
+    const login = require('../../assets/website/login.png')
     return (
       <div>
         <div className="float-left w-1/2 h-screen bg-yellow-300 p-20">
-        <img src={longin} alt="login" className="rounded" />
+        <img src={login} alt="login" className="rounded" />
           <h1 className = "pt-32">Registrado/a puedes:</h1>
           <ul className="p-4">
             <li> <i className="fas fa-check-circle px-1"></i>Agendar una cita en horarios disponibles para tí.</li>
