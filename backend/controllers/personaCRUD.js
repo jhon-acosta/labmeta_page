@@ -1,4 +1,4 @@
-const Persona = require("../models/persona");
+const Persona = require("../models/personas");
 
 const getData = (req, res) => {
   const { query } = req;

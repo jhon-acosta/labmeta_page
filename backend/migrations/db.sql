@@ -17,6 +17,22 @@ create table persona_generos(
     pers_gen_des varchar(150)
 );
 
+create table servicios(
+    id int auto_increment not null primary key,
+    serv_nom varchar(150),
+    serv_des varchar(150)
+);
+
+create table cita_estados(
+    id int auto_increment not null primary key,
+    cita_est_des varchar(150)
+);
+
+create table cita_horarios(
+    id int auto_increment not null primary key,
+    cita_hor_des varchar(150)
+);
+
 create table personas(
     id int auto_increment not null primary key, 
     pers_nom varchar(150), 
@@ -26,12 +42,25 @@ create table personas(
     pers_gen_id int, foreign key (pers_gen_id) references persona_generos(id),
     pers_cor_ele varchar(150), 
     pers_cla varchar(150),
-    pers_tip_id int, foreign key (pers_tip_id) references persona_tipos(id)
+    pers_tip_id int, foreign key (pers_tip_id) references persona_tipos(id),
+    pers_fot longtext
 );
 
+create table citas(
+    id int auto_increment not null primary key, 
+    cita_est_id int, foreign key (cita_est_id) references cita_estados(id),
+    pers_id_pac int, foreign key (pers_id_pac) references personas(id),
+    cita_hor_cre timestamp
+);
 
-
-
+create table cita_detalles(
+    id int auto_increment not null primary key, 
+    cita_id int, foreign key (cita_id) references citas(id),
+    pers_id_doc int, foreign key (pers_id_doc) references personas(id),
+    serv_id int, foreign key (serv_id) references servicios(id),
+    cita_hor_id int, foreign key (cita_hor_id) references cita_horarios(id),
+    cita_det_hor_res timestamp
+);
 
 insert into persona_tipos values(1,'Administrador');
 insert into persona_tipos values(2,'Paciente');
@@ -44,14 +73,26 @@ insert into persona_tipo_identificaciones values(3,'Pasaporte');
 insert into persona_generos values(1,'Masculino');
 insert into persona_generos values(2,'Femenino');
 
-insert into personas values(1,'Johao Perlaza',1,'1718842642','Quito',1,'admin@gmail.com','1234',1);
+insert into servicios(id, serv_nom) values(1,'Cardiología');
+insert into servicios(id, serv_nom) values(2,'Rayos X');
+insert into servicios(id, serv_nom) values(3,'Ginecología');
+insert into servicios(id, serv_nom) values(4,'Ecografía');
+insert into servicios(id, serv_nom) values(5,'Hermatología');
+
+insert into cita_estados values(1,'Activo');
+insert into cita_estados values(2,'En proceso');
+insert into cita_estados values(3,'Cancelado');
+
+insert into cita_horarios values(1,'10-12');
+insert into cita_horarios values(2,'12-14');
+
+insert into personas values(1,'Johao Perlaza',1,'1718842642','Quito',1,'admin@gmail.com','1234',1,'imagen.jpg');
 
 
 
 
 
 -- FUNCIONES
-
 
 DELIMITER $$ 
 CREATE FUNCTION F_PELICULA(P_ID INTEGER)

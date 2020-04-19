@@ -2,13 +2,13 @@ const Sequelize = require("sequelize");
 
 const db = require("../config/db");
 
-module.exports = db.sequelize.define("persona_genero", {
+module.exports = db.sequelize.define("persona_tipos", {
   id: {
     type: Sequelize.INTEGER,
     primaryKey: true,
     autoIncrement: true,
   },
-  pers_gen_des: {
+  pers_tip_des: {
     type: Sequelize.STRING,
   },
 });

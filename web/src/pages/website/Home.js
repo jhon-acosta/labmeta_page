@@ -1,13 +1,48 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
+import axios from "axios";
 
 import Header from "./components/Header";
 import Carousel from "./components/Carrousel";
 import Footer from "./components/Footer";
 
+const API = "http://localhost:5000/labmeta/login";
+
 class Home extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      pers_cor_ele: "",
+      pers_cla: "",
+    };
+  }
+
+  changeHandler = (e) => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
+
+  loginAccess = (e) => {
+    e.preventDefault();
+    if (this.state.pers_cor_ele === "" || this.state.pers_cla === "") {
+      alert("Complete todos los datos para continuar...");
+    } else {
+      axios
+        .post(API, this.state)
+        .then((response) => {
+          if (response.data.mensaje === "found") {
+            this.props.history.push("/");
+            // window.location.assign("http://localhost:3000/");
+          }
+        })
+        .catch((error) => {
+          alert("Datos Incorrectos");
+        });
+    }
+  };
+
   render() {
     const home1 = require("../../assets/website/home1.jpg");
+    const { pers_cor_ele, pers_cla } = this.state;
     return (
       <div className="font-hairline">
         <Header />

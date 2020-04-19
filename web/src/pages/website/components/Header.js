@@ -119,7 +119,7 @@ class Header extends Component {
               onClick={() => this.props.history.push("/citas")}
             >
               <i className="fas fa-user-plus px-1"></i>
-              Consulta médica
+              Reserva una cita
             </button>
           </div>
         </div>

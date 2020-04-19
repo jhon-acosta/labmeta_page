@@ -1,8 +1,8 @@
-const Persona_tipo = require("../models/persona_tipos");
+const Cita_estado = require("../models/cita_estados");
 
 const getData = (req, res) => {
   const { query } = req;
-  Persona_tipo.findAll({ where: query })
+  Cita_estado.findAll({ where: query })
     .then((response) => {
       return res.status(200).json({
         ok: true,
@@ -21,7 +21,7 @@ const getData = (req, res) => {
 const postData = (req, res) => {
   const datos = req.body.datos;
 
-  Persona_tipo.create(datos)
+  Cita_estado.create(datos)
     .then((response) => {
       return res.status(200).json({
         ok: true,
@@ -40,7 +40,7 @@ const postData = (req, res) => {
 const putData = (req, res) => {
   const id = req.query.id;
   const datos = req.body.datos;
-  Persona_tipo.update(datos, { where: { id } })
+  Cita_estado.update(datos, { where: { id } })
     .then((response) => {
       return res.status(200).json({
         ok: true,
@@ -59,7 +59,7 @@ const putData = (req, res) => {
 const deleteData = (req, res) => {
   const { id } = req.query;
 
-  Persona_tipo.destroy({ where: { id } }).then((response) => {
+  Cita_estado.destroy({ where: { id } }).then((response) => {
     return res
       .status(200)
       .json({

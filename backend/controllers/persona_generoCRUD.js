@@ -1,4 +1,4 @@
-const Persona_genero = require("../models/persona_genero");
+const Persona_genero = require("../models/persona_generos");
 
 const getData = (req, res) => {
   const { query } = req;

@@ -2,11 +2,11 @@ const Sequelize = require("sequelize");
 
 const db = require("../config/db");
 
-const persona_tipo_identificacione = require("./persona_tipo_identificacione");
-const persona_genero = require("./persona_genero");
-const persona_tipo = require("./persona_tipo");
+const persona_tipo_identificacione = require("./persona_tipo_identificaciones");
+const persona_genero = require("./persona_generos");
+const persona_tipo = require("./persona_tipos");
 
-module.exports = db.sequelize.define("persona", {
+module.exports = db.sequelize.define("personas", {
   id: {
     type: Sequelize.INTEGER,
     primaryKey: true,
@@ -47,5 +47,8 @@ module.exports = db.sequelize.define("persona", {
       model: persona_tipo,
       key: "id",
     },
+  },
+  pers_fot: {
+    type: Sequelize.STRING,
   },
 });
