@@ -18,7 +18,7 @@ import Ginecologia from "./pages/website/Ginecologia";
 import Hermatologia from "./pages/website/Hermatologia";
 
 // APPOINMENT SYSTEM ROUTES
-import Index from "./pages/appointment_system/index";
+import Login from "./pages/appointment_system/login";
 
 render(
   <Router>
@@ -34,7 +34,7 @@ render(
       <Route path="/hermatology" component={Hermatologia} />
 
       {/* APPOINMENT SYSTEM ROUTES */}
-      <Route path="/citas" component={Index} />
+      <Route path="/citas" component={Login} />
 
       {/* EXTRAS PAGES */}
       {/* <Route component={ Page404 } /> */}
