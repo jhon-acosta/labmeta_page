@@ -7,8 +7,8 @@ import { withRouter } from "react-router-dom";
 
 class Login extends Component {
   render() {
-    const logo = require('../../assets/logo.jpeg')
-    const login = require('../../assets/website/login.png')
+    const logo = require('../../../assets/logo.jpeg')
+    const login = require('../../../assets/website/login.png')
     return (
       <div>
         <div className="float-left w-1/2 h-screen bg-yellow-300 p-20">
@@ -43,7 +43,7 @@ class Login extends Component {
               <br /><br />
               <button
                 className="text-left hover:text-yellow-600"
-                onClick={() => this.props.history.push("/")}
+                onClick={() => this.props.history.push("/form")}
               >
                 <i className="fas fa-user-plus px-1"></i>
               Registrate
@@ -51,7 +51,7 @@ class Login extends Component {
               <br /><br />
               <button
                 className="text-left hover:text-yellow-600"
-                onClick={() => this.props.history.push("/form")}
+                onClick={() => this.props.history.push("/")}
               >
                 <i className="fas fa-user-lock px-1"></i>
               ¿Olvidaste tu contraseña?
