@@ -106,7 +106,9 @@ class Login extends Component {
               >
                 Ingresar
               </button>
-              <button className="hover:text-yellow-300 px-6">
+              <button className="hover:text-yellow-300 px-6"
+               onClick={() => this.props.history.push("/form")}
+              >
                
                 <p> <i className="fas fa-user-plus px-1"></i>Regístrate</p>
               </button>
