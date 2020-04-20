@@ -107,8 +107,8 @@ class Login extends Component {
                 Ingresar
               </button>
               <button className="hover:text-yellow-300 px-6">
-                <i className="fas fa-user-plus px-1"></i>
-                Regístrate
+               
+                <p> <i className="fas fa-user-plus px-1"></i>Regístrate</p>
               </button>
             </div>
             {/* <div className="flex justify-end">
