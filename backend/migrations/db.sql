@@ -38,6 +38,8 @@ create table personas(
     pers_nom varchar(150), 
     pers_tip_ide_id int, foreign key (pers_tip_ide_id) references persona_tipo_identificaciones(id),
     pers_ide varchar(10),
+    pers_tel varchar(10),
+    pers_fec_nac date,
     pers_dir varchar(150),
     pers_gen_id int, foreign key (pers_gen_id) references persona_generos(id),
     pers_cor_ele varchar(150), 
@@ -86,7 +88,7 @@ insert into cita_estados values(3,'Cancelado');
 insert into cita_horarios values(1,'10-12');
 insert into cita_horarios values(2,'12-14');
 
-insert into personas values(1,'Johao Perlaza',1,'1718842642','Quito',1,'admin@gmail.com','1234',1,'imagen.jpg');
+insert into personas values(1,'Johao Perlaza',1,'1718842642','0978970998','1999-04-13','Quito',1,'admin@gmail.com','1234',1,'imagen.jpg');
 
 
 

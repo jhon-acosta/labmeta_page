@@ -116,7 +116,7 @@ class Header extends Component {
           <div>
             <button
               className="lg:text-xl md:text-xl text-sm px-4 hover:bg-green-500 hover:text-white"
-              onClick={() => this.props.history.push("/citas")}
+              onClick={() => this.props.history.push("/login")}
             >
               <i className="fas fa-user-plus px-1"></i>
               Reserva una cita

@@ -25,6 +25,12 @@ module.exports = db.sequelize.define("personas", {
   pers_ide: {
     type: Sequelize.STRING,
   },
+  pers_tel: {
+    type: Sequelize.STRING,
+  },
+  pers_fec_nac: {
+    type: Sequelize.DATE,
+  },
   pers_dir: {
     type: Sequelize.STRING,
   },

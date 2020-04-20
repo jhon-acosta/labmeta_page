@@ -18,9 +18,9 @@ import Ginecologia from "./pages/website/Ginecologia";
 import Hermatologia from "./pages/website/Hermatologia";
 
 // APPOINMENT SYSTEM ROUTES
-import Login from "./pages/appointment_system/Login/login";
+import Login from "./pages/appointment_system/login";
 import Sidebar from "./pages/appointment_system/Sidebar/Sidebar";
-import Form from "./pages/appointment_system/Form/form"
+import Register from "./pages/appointment_system/register";
 
 render(
   <Router>
@@ -36,8 +36,8 @@ render(
       <Route path="/hermatology" component={Hermatologia} />
 
       {/* APPOINMENT SYSTEM ROUTES */}
-      <Route path="/citas" component={Login} />
-      <Route path="/form" component={Form} />
+      <Route path="/login" component={Login} />
+      <Route path="/register" component={Register} />
       <Route path="/sidebar" component={Sidebar} />
 
       {/* EXTRAS PAGES */}
