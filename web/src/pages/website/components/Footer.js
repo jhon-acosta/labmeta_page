@@ -79,6 +79,17 @@ class Footer extends Component {
             <p>
               <i className="fas fa-envelope-square px-1"></i> rlabmeta@gmail.com
             </p>
+            <div className="flex justify-between py-2">
+              <button
+                className="border bg-yellow-500 text-black p-2 rounded"
+                onClick={() => this.props.history.push("/adminlogin")}
+              >
+                Administrador
+              </button>
+              {/* <button className="border bg-yellow-500 text-black p-2 rounded">
+                Personal
+              </button> */}
+            </div>
           </div>
         </div>
       </div>

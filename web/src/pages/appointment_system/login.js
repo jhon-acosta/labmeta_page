@@ -8,8 +8,8 @@ class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      pers_cor_ele: "admin@gmail.com",
-      pers_cla: "1234",
+      pers_cor_ele: "",
+      pers_cla: "",
     };
   }
 
@@ -26,7 +26,7 @@ class Login extends Component {
         .post(API, this.state)
         .then((response) => {
           if (response.data.mensaje === "found") {
-            this.props.history.push("/");
+            this.props.history.push("/sidebar");
           }
         })
         .catch((error) => {

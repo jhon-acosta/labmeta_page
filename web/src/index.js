@@ -19,8 +19,12 @@ import Hermatologia from "./pages/website/Hermatologia";
 
 // APPOINMENT SYSTEM ROUTES
 import Login from "./pages/appointment_system/login";
-import Sidebar from "./pages/appointment_system/Sidebar/Sidebar";
 import Register from "./pages/appointment_system/register";
+// APPOINMENT SYSTEM ROUTES - PATTIENTS
+import Sidebar from "./pages/appointment_system/Sidebar/Sidebar";
+// APPOINMENT SYSTEM ROUTES - ADMINISTRATION
+import adminlogin from "./pages/appointment_system/administration/adminlogin";
+import adminhome from "./pages/appointment_system/administration/adminhome";
 
 render(
   <Router>
@@ -36,12 +40,13 @@ render(
       <Route path="/hermatology" component={Hermatologia} />
 
       {/* APPOINMENT SYSTEM ROUTES */}
-      <Route path="/login" component={Login} />
-      <Route path="/register" component={Register} />
+      <Route exact path="/login" component={Login} />
+      <Route exact path="/register" component={Register} />
+      {/* APPOINMENT SYSTEM ROUTES - PATTIENTS */}
       <Route path="/sidebar" component={Sidebar} />
-
-      {/* EXTRAS PAGES */}
-      {/* <Route component={ Page404 } /> */}
+      {/* APPOINMENT SYSTEM ROUTES - ADMINISTRATION */}
+      <Route exact path="/adminlogin" component={adminlogin} />
+      <Route exact path="/adminhome" component={adminhome} />
     </Switch>
   </Router>,
   document.getElementById("root")
