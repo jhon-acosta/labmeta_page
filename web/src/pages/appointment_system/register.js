@@ -1,10 +1,94 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
+import axios from "axios";
 
-// import "./writing.css";
+const API = "http://localhost:5000/labmeta/";
 
 class Register extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      pers_nom: "",
+      pers_tip_ide_id: "",
+      pers_ide: "",
+      pers_gen_id: "",
+      pers_cor_ele: "",
+      pers_cla: "",
+      persona_genero: [],
+      persona_tipo_identificacione: [],
+    };
+  }
+
+  componentDidMount() {
+    axios
+      .get(API + "persona_genero")
+      .then((response) => {
+        this.setState({ persona_genero: response.data.datos });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    axios
+      .get(API + "persona_tipo_identificacione")
+      .then((response) => {
+        this.setState({ persona_tipo_identificacione: response.data.datos });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  changeHandler = (e) => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
+
+  registerUser = (e) => {
+    e.preventDefault();
+    this.post = {
+      datos: {
+        pers_nom: this.state.pers_nom,
+        pers_tip_ide_id: this.state.pers_tip_ide_id,
+        pers_ide: this.state.pers_ide,
+        pers_gen_id: this.state.pers_gen_id,
+        pers_cor_ele: this.state.pers_cor_ele,
+        pers_cla: this.state.pers_cla,
+      },
+    };
+    if (
+      this.post.datos.pers_nom === "" ||
+      this.post.datos.pers_tip_ide_id === "" ||
+      this.post.datos.pers_ide === "" ||
+      this.post.datos.pers_gen_id === "" ||
+      this.post.datos.pers_cor_ele === "" ||
+      this.post.datos.pers_cla === ""
+    ) {
+      alert("Complete todos los datos para continuar...");
+    } else {
+      axios
+        .post(API + "persona", this.post)
+        .then((response) => {
+          if (response.data.ok === true) {
+            // localStorage.setItem("pers_nom", this.state.pers_nom);
+            this.props.history.push("/login");
+          }
+        })
+        .catch((error) => {
+          alert("Datos Incorrectos");
+        });
+    }
+  };
+
   render() {
+    const {
+      pers_nom,
+      pers_tip_ide_id,
+      pers_ide,
+      pers_gen_id,
+      pers_cor_ele,
+      pers_cla,
+      persona_genero,
+      persona_tipo_identificacione,
+    } = this.state;
     const logo = require("../../assets/logo.jpeg");
     const register = require("../../assets/appointment_system/register.jpg");
     return (
@@ -22,15 +106,17 @@ class Register extends Component {
             <div className="py-1">
               <div className="flex items-center">
                 <i className="fas fa-user px-1"></i>
-                <p className="px-2">* Apellidos y Nombres:</p>
+                <p className="px-2">* Apellidos y nombres:</p>
               </div>
               <div>
                 <input
-                  type="text"
-                  name="name"
-                  autoComplete="off"
-                  placeHolder="Apellidos y Nombres"
                   className="border-2 h-10 w-full rounded-lg px-4"
+                  placeHolder="Apellidos y nombres"
+                  type="text"
+                  name="pers_nom"
+                  value={pers_nom}
+                  onChange={this.changeHandler}
+                  autoComplete="off"
                 />
               </div>
             </div>
@@ -41,20 +127,29 @@ class Register extends Component {
               </div>
               <div className="flex">
                 <div className="px-1">
-                  <select className="border-2 h-10 w-full rounded-lg">
+                  <select
+                    className="border-2 h-10 w-full rounded-lg"
+                    name="pers_tip_ide_id"
+                    value={pers_tip_ide_id}
+                    onChange={this.changeHandler}
+                  >
                     <option value="">Seleccione...</option>
-                    <option value="1">Cédula</option>
-                    <option value="2">R.U.C.</option>
-                    <option value="3">Pasaporte</option>
+                    {persona_tipo_identificacione.map((element) => (
+                      <option key={element.id} value={element.id}>
+                        {element.pers_tip_ide_des}
+                      </option>
+                    ))}
                   </select>
                 </div>
                 <div className="px-1">
                   <input
-                    type="text"
-                    name="name"
-                    autoComplete="off"
-                    placeHolder="1234567890"
                     className="border-2 h-10 w-full rounded-lg px-4"
+                    placeHolder="1234567890"
+                    type="text"
+                    name="pers_ide"
+                    value={pers_ide}
+                    onChange={this.changeHandler}
+                    autoComplete="off"
                   />
                 </div>
               </div>
@@ -65,10 +160,18 @@ class Register extends Component {
                   <i className="fas fa-user px-1"></i>
                   <p className="px-2">* Género:</p>
                 </div>
-                <select className="border-2 h-10 rounded-lg">
+                <select
+                  className="border-2 h-10 rounded-lg"
+                  name="pers_gen_id"
+                  value={pers_gen_id}
+                  onChange={this.changeHandler}
+                >
                   <option value="">Seleccione...</option>
-                  <option value="1">Masculino</option>
-                  <option value="2">Femenino</option>
+                  {persona_genero.map((element) => (
+                    <option key={element.id} value={element.id}>
+                      {element.pers_gen_des}
+                    </option>
+                  ))}
                 </select>
               </div>
             </div>
@@ -99,11 +202,13 @@ class Register extends Component {
               </div>
               <div>
                 <input
-                  type="email"
-                  name="name"
-                  autoComplete="off"
-                  placeHolder="ejemplo@gmail.com"
                   className="border-2 h-10 w-full rounded-lg px-4"
+                  placeHolder="ejemplo@gmail.com"
+                  type="email"
+                  name="pers_cor_ele"
+                  value={pers_cor_ele}
+                  onChange={this.changeHandler}
+                  autoComplete="off"
                 />
               </div>
             </div>
@@ -115,27 +220,29 @@ class Register extends Component {
             <div className="flex">
               <div className="px-1 w-full">
                 <input
-                  type="password"
-                  name="name"
-                  placeHolder="Contraseña"
                   className="border-2 h-10 w-full rounded-lg px-4"
+                  placeHolder="Contraseña"
+                  type="password"
+                  name="pers_cla"
+                  value={pers_cla}
+                  onChange={this.changeHandler}
                 />
               </div>
-              <div className="px-1 w-full">
+              {/* <div className="px-1 w-full">
                 <input
                   type="password"
                   name="name"
                   placeHolder="Confirmar contraseña"
                   className="border-2 h-10 w-full rounded-lg px-4"
                 />
-              </div>
+              </div> */}
             </div>
           </div>
           <div>
             <div className="flex justify-center py-8">
               <button
                 className="bg-yellow-500 rounded-lg hover:bg-yellow-400 p-3 mr-2"
-                onClick={() => this.props.history.push("/login")}
+                onClick={this.registerUser}
               >
                 Registrarme
               </button>
@@ -177,4 +284,5 @@ class Register extends Component {
     );
   }
 }
+
 export default withRouter(Register);
