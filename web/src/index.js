@@ -25,6 +25,7 @@ import Sidebar from "./pages/appointment_system/Sidebar/Sidebar";
 // APPOINMENT SYSTEM ROUTES - ADMINISTRATION
 import adminlogin from "./pages/appointment_system/administration/adminlogin";
 import adminhome from "./pages/appointment_system/administration/adminhome";
+import addemployee from "./pages/appointment_system/administration/addemployee";
 
 render(
   <Router>
@@ -47,6 +48,7 @@ render(
       {/* APPOINMENT SYSTEM ROUTES - ADMINISTRATION */}
       <Route exact path="/adminlogin" component={adminlogin} />
       <Route exact path="/adminhome" component={adminhome} />
+      <Route path="/addemployee" component={addemployee} />
     </Switch>
   </Router>,
   document.getElementById("root")

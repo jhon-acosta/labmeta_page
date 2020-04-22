@@ -52,6 +52,7 @@ class Register extends Component {
         pers_gen_id: this.state.pers_gen_id,
         pers_cor_ele: this.state.pers_cor_ele,
         pers_cla: this.state.pers_cla,
+        pers_tip_id: 2,
       },
     };
     if (
@@ -89,7 +90,7 @@ class Register extends Component {
       persona_genero,
       persona_tipo_identificacione,
     } = this.state;
-    const logo = require("../../assets/logo.jpeg");
+    const logo = require("../../assets/logo.png");
     const register = require("../../assets/appointment_system/register.jpg");
     return (
       <div className="flex">

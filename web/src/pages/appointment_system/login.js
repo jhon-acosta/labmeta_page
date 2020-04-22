@@ -37,7 +37,7 @@ class Login extends Component {
 
   render() {
     const { pers_cor_ele, pers_cla } = this.state;
-    const logo = require("../../assets/logo.jpeg");
+    const logo = require("../../assets/logo.png");
     const login = require("../../assets/appointment_system/login.png");
     return (
       <div className="flex">

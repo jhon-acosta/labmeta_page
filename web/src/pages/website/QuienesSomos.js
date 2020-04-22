@@ -5,7 +5,7 @@ import Footer from "./components/Footer";
 
 class QuienesSomos extends Component {
   render() {
-    const logo = require("../../assets/logo.jpeg");
+    const logo = require("../../assets/logo.png");
     return (
       <div className="font-hairline">
         <Header />

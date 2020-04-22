@@ -26,6 +26,7 @@ class AdminLogin extends Component {
         .post(API, this.state)
         .then((response) => {
           if (response.data.mensaje === "found") {
+            localStorage.setItem("pers_cor_ele", this.state.pers_cor_ele);
             this.props.history.push("/adminhome");
           }
         })
@@ -37,7 +38,7 @@ class AdminLogin extends Component {
 
   render() {
     const { pers_cor_ele, pers_cla } = this.state;
-    const logo = require("../../../assets/logo.jpeg");
+    const logo = require("../../../assets/logo.png");
     const bg_login = require("../../../assets/appointment_system/administration/bg-login.jpg");
     return (
       <div

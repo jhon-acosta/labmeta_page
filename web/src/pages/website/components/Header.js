@@ -3,7 +3,7 @@ import { withRouter } from "react-router-dom";
 
 class Header extends Component {
   render() {
-    const logo = require("../../../assets/logo.jpeg");
+    const logo = require("../../../assets/logo.png");
     return (
       <div className="font-hairline">
         <div className="w-full h-6 bg-green-400 opacity-75"></div>

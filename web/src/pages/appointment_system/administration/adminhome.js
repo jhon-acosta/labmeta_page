@@ -9,10 +9,8 @@ class AdminHome extends Component {
     return (
       <div>
         <Header />
-        <div className="fixed ml-56 p-8">
-          <h1>HOME</h1>
-        </div>
         <Sidebar />
+        <div className="flex ml-56 p-4">asd</div>
       </div>
     );
   }
