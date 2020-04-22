@@ -70,7 +70,7 @@ class Register extends Component {
         .then((response) => {
           if (response.data.ok === true) {
             // localStorage.setItem("pers_nom", this.state.pers_nom);
-            this.props.history.push("/login");
+            this.props.history.push("/patientlogin");
           }
         })
         .catch((error) => {
@@ -90,8 +90,8 @@ class Register extends Component {
       persona_genero,
       persona_tipo_identificacione,
     } = this.state;
-    const logo = require("../../assets/logo.png");
-    const register = require("../../assets/appointment_system/register.jpg");
+    const logo = require("../../../assets/logo.png");
+    const register = require("../../../assets/appointment_system/patient/register.jpg");
     return (
       <div className="flex">
         <div className="lg:w-1/2 md:w-1/2 w-full h-screen bg-green-500 lg:p-8 md:p-12 p-4">
@@ -249,7 +249,7 @@ class Register extends Component {
               </button>
               <button
                 className="bg-blue-700 rounded-lg hover:text-white p-3 ml-2"
-                onClick={() => this.props.history.push("/login")}
+                onClick={() => this.props.history.push("/patientlogin")}
               >
                 <i className="fas fa-user-plus px-1"></i>
                 Iniciar sesión

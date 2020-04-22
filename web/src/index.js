@@ -17,12 +17,10 @@ import Ecografia from "./pages/website/Ecografia";
 import Ginecologia from "./pages/website/Ginecologia";
 import Hermatologia from "./pages/website/Hermatologia";
 
-// APPOINMENT SYSTEM ROUTES
-import Login from "./pages/appointment_system/login";
-import Register from "./pages/appointment_system/register";
 // APPOINMENT SYSTEM ROUTES - PATTIENTS
-import Sidebar from "./pages/appointment_system/Sidebar/sidebar";
-import Home_Paciente from "./pages/appointment_system/home";
+import Patientlogin from "./pages/appointment_system/patient/patientlogin";
+import Patientregister from "./pages/appointment_system/patient/patientregister";
+import Patienthome from "./pages/appointment_system/patient/patienthome";
 // APPOINMENT SYSTEM ROUTES - ADMINISTRATION
 import adminlogin from "./pages/appointment_system/administration/adminlogin";
 import adminhome from "./pages/appointment_system/administration/adminhome";
@@ -40,13 +38,10 @@ render(
       <Route path="/echography" component={Ecografia} />
       <Route path="/gynecology" component={Ginecologia} />
       <Route path="/hermatology" component={Hermatologia} />
-
-      {/* APPOINMENT SYSTEM ROUTES */}
-      <Route exact path="/login" component={Login} />
-      <Route exact path="/register" component={Register} />
       {/* APPOINMENT SYSTEM ROUTES - PATTIENTS */}
-      <Route path="/sidebar" component={Sidebar} />
-      <Route path="/home_paciente" component={Home_Paciente} />
+      <Route exact path="/patientlogin" component={Patientlogin} />
+      <Route exact path="/patientregister" component={Patientregister} />
+      <Route exact path="/patienthome" component={Patienthome} />
       {/* APPOINMENT SYSTEM ROUTES - ADMINISTRATION */}
       <Route exact path="/adminlogin" component={adminlogin} />
       <Route exact path="/adminhome" component={adminhome} />

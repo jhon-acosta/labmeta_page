@@ -26,7 +26,7 @@ class Login extends Component {
         .post(API, this.state)
         .then((response) => {
           if (response.data.mensaje === "found") {
-            this.props.history.push("/sidebar");
+            this.props.history.push("/patienthome");
           }
         })
         .catch((error) => {
@@ -37,8 +37,8 @@ class Login extends Component {
 
   render() {
     const { pers_cor_ele, pers_cla } = this.state;
-    const logo = require("../../assets/logo.png");
-    const login = require("../../assets/appointment_system/login.png");
+    const logo = require("../../../assets/logo.png");
+    const login = require("../../../assets/appointment_system/patient/login.png");
     return (
       <div className="flex">
         <div className="hidden lg:block md:block lg:w-1/2 md:w-1/2 h-screen bg-yellow-300 lg:p-20 md:p-12">
@@ -92,7 +92,7 @@ class Login extends Component {
               </button>
               <button
                 className="bg-blue-700 rounded-lg hover:text-white p-3 ml-2"
-                onClick={() => this.props.history.push("/register")}
+                onClick={() => this.props.history.push("/patientregister")}
               >
                 <i className="fas fa-user-plus px-1"></i>
                 Registrarme
