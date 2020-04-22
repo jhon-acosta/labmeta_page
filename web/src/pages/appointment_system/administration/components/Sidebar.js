@@ -29,9 +29,12 @@ class Sidebar extends Component {
                 <i className="fas fa-play mr-2 ml-4"></i>
                 Añadir nuevo empleado
               </button>
-              <button className="w-full block text-left xl:flex xl:items-center shadow xl:shadow-none py-3 px-3 xl:px-4 border-l-4 border-transparent hover:text-blue-dark text-xs hover:bg-gray-800">
+              <button
+                className="w-full block text-left xl:flex xl:items-center shadow xl:shadow-none py-3 px-3 xl:px-4 border-l-4 border-transparent hover:text-blue-dark text-xs hover:bg-gray-800"
+                onClick={() => this.props.history.push("/employees")}
+              >
                 <i className="fas fa-play mr-2 ml-4"></i>
-                Administrar médicos
+                Administrar empleados
               </button>
             </div>
           </div>

@@ -22,9 +22,11 @@ import Patientlogin from "./pages/appointment_system/patient/patientlogin";
 import Patientregister from "./pages/appointment_system/patient/patientregister";
 import Patienthome from "./pages/appointment_system/patient/patienthome";
 // APPOINMENT SYSTEM ROUTES - ADMINISTRATION
-import adminlogin from "./pages/appointment_system/administration/adminlogin";
-import adminhome from "./pages/appointment_system/administration/adminhome";
-import addemployee from "./pages/appointment_system/administration/addemployee";
+import Adminlogin from "./pages/appointment_system/administration/adminlogin";
+import Adminhome from "./pages/appointment_system/administration/adminhome";
+import Addemployee from "./pages/appointment_system/administration/addemployee";
+import Employees from "./pages/appointment_system/administration/employees";
+import Updateemployee from "./pages/appointment_system/administration/updateemployee";
 
 render(
   <Router>
@@ -43,9 +45,11 @@ render(
       <Route exact path="/patientregister" component={Patientregister} />
       <Route exact path="/patienthome" component={Patienthome} />
       {/* APPOINMENT SYSTEM ROUTES - ADMINISTRATION */}
-      <Route exact path="/adminlogin" component={adminlogin} />
-      <Route exact path="/adminhome" component={adminhome} />
-      <Route path="/addemployee" component={addemployee} />
+      <Route exact path="/adminlogin" component={Adminlogin} />
+      <Route exact path="/adminhome" component={Adminhome} />
+      <Route path="/addemployee" component={Addemployee} />
+      <Route path="/employees" component={Employees} />
+      <Route path="/updateemployee" component={Updateemployee} />
     </Switch>
   </Router>,
   document.getElementById("root")

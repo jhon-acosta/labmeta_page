@@ -26,7 +26,7 @@ class AdminLogin extends Component {
         .post(API, this.state)
         .then((response) => {
           if (response.data.mensaje === "found") {
-            localStorage.setItem("pers_cor_ele", this.state.pers_cor_ele);
+            localStorage.setItem("pers_cor_ele_login", this.state.pers_cor_ele);
             this.props.history.push("/adminhome");
           }
         })

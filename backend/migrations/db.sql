@@ -66,7 +66,7 @@ create table cita_detalles(
 
 insert into persona_tipos values(1,'Administrador');
 insert into persona_tipos values(2,'Paciente');
-insert into persona_tipos values(3,'Doctor');
+insert into persona_tipos values(3,'Empleado');
 
 insert into persona_tipo_identificaciones values(1,'Cédula');
 insert into persona_tipo_identificaciones values(2,'R.U.C.');

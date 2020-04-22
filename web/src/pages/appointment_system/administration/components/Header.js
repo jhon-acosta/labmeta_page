@@ -14,7 +14,11 @@ class Header extends Component {
 
   componentDidMount() {
     axios
-      .get(`${API}persona?pers_cor_ele=${localStorage.getItem("pers_cor_ele")}`)
+      .get(
+        `${API}persona?pers_cor_ele=${localStorage.getItem(
+          "pers_cor_ele_login"
+        )}`
+      )
       .then((response) => {
         this.setState({ pers_dat: response.data.datos[0] });
       })
