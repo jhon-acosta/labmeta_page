@@ -21,7 +21,8 @@ import Hermatologia from "./pages/website/Hermatologia";
 import Login from "./pages/appointment_system/login";
 import Register from "./pages/appointment_system/register";
 // APPOINMENT SYSTEM ROUTES - PATTIENTS
-import Sidebar from "./pages/appointment_system/Sidebar/Sidebar";
+import Sidebar from "./pages/appointment_system/Sidebar/sidebar";
+import Home_Paciente from "./pages/appointment_system/home";
 // APPOINMENT SYSTEM ROUTES - ADMINISTRATION
 import adminlogin from "./pages/appointment_system/administration/adminlogin";
 import adminhome from "./pages/appointment_system/administration/adminhome";
@@ -45,6 +46,7 @@ render(
       <Route exact path="/register" component={Register} />
       {/* APPOINMENT SYSTEM ROUTES - PATTIENTS */}
       <Route path="/sidebar" component={Sidebar} />
+      <Route path="/home_paciente" component={Home_Paciente} />
       {/* APPOINMENT SYSTEM ROUTES - ADMINISTRATION */}
       <Route exact path="/adminlogin" component={adminlogin} />
       <Route exact path="/adminhome" component={adminhome} />
