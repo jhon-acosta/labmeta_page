@@ -1,58 +1,71 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
-import './Sidebar.css'
+
 
 class Sidebar extends Component {
     render() {
-        const paciente = require('./paciente.jpg')
+        const logo = require('../../../assets/logo.jpeg')
+        const paciente_img = require('../Sidebar/paciente.jpg')
         return (
             <div>
-                <input type="checkbox" id="check"></input>
-                <label for="check">
-                    <i className="fas fa-bars" id="btn"></i>
-                    <i className="fas fa-times" id="cancel"></i>
-                </label>
-
-                <div className="bg-yellow-600 h-16 flex justify-end p-2 group">
-                    <button className="lg:text-xl md:text-xl text-sm px-4 hover:text-white">
-                        <i className="fas fa-caret-square-down px-1"></i>
-                        Manu Vargas
-                  </button>
-                    <div className="hidden group-hover:block absolute w-2/12 bg-yellow-400 z-10 p10">
-                        <button
-                            className="block text-left py-3 lg:px-3 md:px-3 px-1 hover:bg-green-500 hover:text-white text-sm w-full"
-                            onClick={() => this.props.history.push("/")}
-                        >
-                            Mi perfil
-                        </button>
-                        <button
-                            className="block text-left py-3 lg:px-3 md:px-3 px-1 hover:bg-green-500 hover:text-white text-sm w-full"
-                            onClick={() => this.props.history.push("/")}
-                        >
-                            Cambiar Contrasena
-                        </button>
-                        <button
-                            className="block text-left py-3 lg:px-3 md:px-3 px-1 hover:bg-green-500 hover:text-white text-sm w-full"
-                            onClick={() => this.props.history.push("/")}
-                        >
-                            Cerrar Sesion
-                        </button>
+                <div className="h-16 bg-yellow-400 lg:px-20 md:px-20 px-4 justify-end flex items-center">
+                <div className="flex pr-64">
+                        <img src={logo} alt="logo" className="w-16 h-16 rounded-full" />
                     </div>
-                    <img src={paciente} alt='paciente' className="w-12 h-12 rounded-lg" />
-                </div>
+                <button
+                        className="lg:text-xl h-16 md:text-xl text-sm px-4 hover:bg-green-500 hover:text-white"
+                        onClick={() => this.props.history.push("/whoweare")}
+                    ><p><i className="fas fa-house-user px-1"></i>Inicio</p>
+                        </button>
+                <button
+                        className="lg:text-xl h-16 md:text-xl text-sm px-4 hover:bg-green-500 hover:text-white"
+                        onClick={() => this.props.history.push("/whoweare")}
+                    ><p><i className="fas fa-clipboard-list px-1"></i>Reservar una Cita</p>
+                        </button>
+                <button
+                        className="lg:text-xl h-16 md:text-xl text-sm px-4 hover:bg-green-500 hover:text-white "
+                        onClick={() => this.props.history.push("/whoweare")}
+                    ><p><i className="fas fa-history px-1"></i>Historial Clinico</p>
+                        </button>
 
-                <div className="sidebar">
-                    <header>Menú</header>
-                    <ul>
-                        <li><a href="/"><i className="fas fa-home px-1"></i>Inicio</a> </li>
-                        <li><a href="/"><i className="fas fa-clock px-1"></i>Reservar Cita</a> </li>
-                        <li><a href="/"><i className="fas fa-list px-1"></i>Historial de Citas</a> </li>
-                    </ul>
+                    <div className="flex px-2">
+                        <img src={paciente_img} alt="logo" className="w-14 h-14 rounded-md" />
+                    </div>
+                    <button
+                        className="lg:text-xl md:text-xl text-sm px-4 hover:text-white"
+                        onClick={() => this.props.history.push("/whoweare")}
+                    ><p>ESTER EXPOSITO</p>
+                        </button>
+                    <div className="flex flex-row flex-wrap justify-center py-1 lg:justify-center md:justify-start">
+                        <div className="group relative">
+                            <button className="lg:text-xl w-full md:text-xl text-sm px-10 hover:text-white">
+                                <i className="fas fa-angle-down px-1"></i>
+                            </button>
+                            <div className="hidden group-hover:block absolute w-full bg-yellow-400 z-10 border-green-500 border-2">
+                                <button
+                                    className="block text-left py-3 lg:px-3 md:px-3 px-1 hover:bg-green-500 text-sm w-full"
+                                    onClick={() => this.props.history.push("/cardiology")}
+                                >
+                                     <p> <i className="fas fa-user px-1"></i> Mi perfil</p>
+                               </button>
+                                <button
+                                    className="block text-left py-3 lg:px-3 md:px-3 px-1 hover:bg-green-500 text-sm w-full"
+                                    onClick={() => this.props.history.push("/rayx")}
+                                >
+                                    <i className="fas fa-key px-1"></i>
+                                    Cambiar Contrasena
+                               </button>
+                                <button
+                                    className="block text-left py-3 lg:px-3 md:px-3 px-1 hover:bg-green-500 text-sm w-full"
+                                    onClick={() => this.props.history.push("/gynecology")}
+                                >
+                                    <i className="fas fa-door-closed px-1"></i>
+                                  Cerrar Sesión
+                               </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            <div className ="w-full">
-                dadsadsa
-            </div>
-
             </div>
         )
     }
