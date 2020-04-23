@@ -82,7 +82,7 @@ class Footer extends Component {
             <div className="flex justify-between py-2">
               <button
                 className="border bg-yellow-500 text-black p-2 rounded"
-                onClick={() => this.props.history.push("/adminlogin")}
+                onClick={() => this.props.history.push("/admin/login")}
               >
                 Administrador
               </button>

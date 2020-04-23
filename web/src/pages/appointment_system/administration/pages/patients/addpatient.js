@@ -3,24 +3,24 @@ import { withRouter } from "react-router-dom";
 import Swal from "sweetalert2";
 import axios from "axios";
 
-import Sidebar from "./components/Sidebar";
-import Header from "./components/Header";
+import Sidebar from "../../components/Sidebar";
+import Header from "../../components/Header";
 
 const API = "http://localhost:5000/labmeta/";
 
-class UpdateEmployee extends Component {
+class AddPatient extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: localStorage.getItem("id"),
-      pers_nom: localStorage.getItem("pers_nom"),
-      pers_tip_ide_id: localStorage.getItem("pers_tip_ide_id"),
-      pers_ide: localStorage.getItem("pers_ide"),
-      pers_tel: localStorage.getItem("pers_tel"),
-      pers_fec_nac: localStorage.getItem("pers_fec_nac"),
-      pers_dir: localStorage.getItem("pers_dir"),
-      pers_gen_id: localStorage.getItem("pers_gen_id"),
-      pers_cor_ele: localStorage.getItem("pers_cor_ele"),
+      pers_nom: "",
+      pers_tip_ide_id: "",
+      pers_ide: "",
+      pers_tel: "",
+      pers_fec_nac: "",
+      pers_dir: "",
+      pers_gen_id: "",
+      pers_cor_ele: "",
+      pers_cla: "",
       pers_fot: "",
       persona_genero: [],
       persona_tipo_identificacione: [],
@@ -59,11 +59,10 @@ class UpdateEmployee extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  updateData = (e) => {
+  saveData = (e) => {
     e.preventDefault();
-    this.update = {
+    this.post = {
       datos: {
-        id: this.state.id,
         pers_nom: this.state.pers_nom,
         pers_tip_ide_id: this.state.pers_tip_ide_id,
         pers_ide: this.state.pers_ide,
@@ -72,40 +71,39 @@ class UpdateEmployee extends Component {
         pers_dir: this.state.pers_dir,
         pers_gen_id: this.state.pers_gen_id,
         pers_cor_ele: this.state.pers_cor_ele,
+        pers_cla: this.state.pers_cla,
         pers_fot: this.state.pers_fot,
+        pers_tip_id: 2,
       },
     };
-
     if (
-      this.update.datos.id === "" ||
-      this.update.datos.pers_nom === "" ||
-      this.update.datos.pers_tip_ide_id === "" ||
-      this.update.datos.pers_ide === "" ||
-      this.update.datos.pers_tel === "" ||
-      this.update.datos.pers_fec_nac === "" ||
-      this.update.datos.pers_dir === "" ||
-      this.update.datos.pers_gen_id === "" ||
-      this.update.datos.pers_cor_ele === ""
+      this.post.datos.pers_nom === "" ||
+      this.post.datos.pers_tip_ide_id === "" ||
+      this.post.datos.pers_ide === "" ||
+      this.post.datos.pers_tel === "" ||
+      this.post.datos.pers_fec_nac === "" ||
+      this.post.datos.pers_dir === "" ||
+      this.post.datos.pers_gen_id === "" ||
+      // this.post.datos.pers_cla === "" ||
+      this.post.datos.pers_cor_ele === ""
     ) {
       Swal.fire("", "Complete todos los datos para continuar...!");
     } else {
       axios
-        .put(`${API}persona?id=${this.state.id}`, this.update)
+        .post(API + "persona", this.post)
         .then((response) => {
           if (response.data.ok === true) {
             Swal.fire({
               position: "center",
               icon: "success",
-              title: "Actualizado correctamente",
+              title: "Agregado exitosamente",
               showConfirmButton: false,
               timer: 1000,
-            }).then(() => {
-              this.props.history.push("/employees");
-            });
+            }).then(() => this.props.history.push("/admin/patients"));
           }
         })
         .catch((error) => {
-          console.log(error);
+          alert("Datos Incorrectos");
         });
     }
   };
@@ -129,6 +127,7 @@ class UpdateEmployee extends Component {
       pers_dir,
       pers_gen_id,
       pers_cor_ele,
+      // pers_cla,
       pers_fot,
       persona_genero,
       persona_tipo_identificacione,
@@ -289,7 +288,7 @@ class UpdateEmployee extends Component {
           <div className="text-center">
             <button
               className="bg-gray-300 text-gray-800 font-bold rounded border-b-2 border-green-500 hover:border-green-600 hover:bg-green-500 hover:text-white shadow-md py-2 px-6 inline-flex items-center"
-              onClick={this.updateData}
+              onClick={this.saveData}
             >
               <i className="fas fa-save"></i>
               <span className="mr-2">Guardar</span>
@@ -301,4 +300,4 @@ class UpdateEmployee extends Component {
   }
 }
 
-export default withRouter(UpdateEmployee);
+export default withRouter(AddPatient);

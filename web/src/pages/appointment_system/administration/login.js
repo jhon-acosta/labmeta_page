@@ -8,7 +8,7 @@ class AdminLogin extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      pers_cor_ele: "johao@gmail.com",
+      pers_cor_ele: "admin@gmail.com",
       pers_cla: "1234",
     };
   }
@@ -27,7 +27,7 @@ class AdminLogin extends Component {
         .then((response) => {
           if (response.data.mensaje === "found") {
             localStorage.setItem("pers_cor_ele_login", this.state.pers_cor_ele);
-            this.props.history.push("/adminhome");
+            this.props.history.push("/admin/home");
           }
         })
         .catch((error) => {

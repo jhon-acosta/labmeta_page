@@ -3,37 +3,37 @@ import { withRouter } from "react-router-dom";
 import Swal from "sweetalert2";
 import axios from "axios";
 
-import Sidebar from "./components/Sidebar";
-import Header from "./components/Header";
+import Sidebar from "../components/Sidebar";
+import Header from "../components/Header";
 
 const API = "http://localhost:5000/labmeta/";
 
-class Genres extends Component {
+class Appointmentstates extends Component {
   constructor(props) {
     super(props);
     this.state = {
       table_header: {
-        pers_gen_des: "Descripción",
+        cita_est_des: "Descripción",
       },
-      genres: [],
+      appointmentstates: [],
     };
   }
 
   componentDidMount() {
     axios
-      .get(`${API}persona_genero`)
+      .get(`${API}cita_estado`)
       .then((response) => {
-        this.setState({ genres: response.data.datos });
+        this.setState({ appointmentstates: response.data.datos });
       })
       .catch((error) => {
         console.log(error);
       });
   }
 
-  updateData = (p_id, p_pers_gen_des) => {
+  updateData = (p_id, p_cita_est_des) => {
     localStorage.setItem("id", p_id);
-    localStorage.setItem("pers_gen_des", p_pers_gen_des);
-    this.props.history.push("/updategenre");
+    localStorage.setItem("cita_est_des", p_cita_est_des);
+    this.props.history.push("/updateappointmentstate");
   };
 
   deleteData = (value) => {
@@ -45,7 +45,7 @@ class Genres extends Component {
       cancelButtonText: "Cancelar",
     }).then((result) => {
       if (result.value) {
-        axios.delete(`${API}persona_genero?id=${value}`, {
+        axios.delete(`${API}cita_estado?id=${value}`, {
           data: { id: value },
         });
         Swal.fire({
@@ -53,13 +53,15 @@ class Genres extends Component {
           title: "Eliminado exitosamente!",
           showConfirmButton: false,
           timer: 1000,
-        }).then(() => window.location.assign("http://localhost:3000/genres"));
+        }).then(() =>
+          window.location.assign("http://localhost:3000/appointmentstates")
+        );
       }
     });
   };
 
   render() {
-    const { genres } = this.state;
+    const { appointmentstates } = this.state;
     return (
       <div>
         <Sidebar />
@@ -67,7 +69,9 @@ class Genres extends Component {
         <div className="flex flex-col ml-48 p-4">
           <div className="py-4">
             <div className="justify-center my-5 select-none flex">
-              <p className="mt-5 text-center mr-10 text-2xl">Géneros.</p>
+              <p className="mt-5 text-center mr-10 text-2xl">
+                Estados de citas.
+              </p>
             </div>
             <div className="px-3 py-4 flex justify-center">
               <table className="w-full text-md bg-white shadow-md rounded mb-4 text-center">
@@ -75,7 +79,7 @@ class Genres extends Component {
                   <tr>
                     <th></th>
                     <th className="p-3 px-5">
-                      {this.state.table_header.pers_gen_des}
+                      {this.state.table_header.cita_est_des}
                     </th>
                   </tr>
                 </thead>
@@ -83,11 +87,11 @@ class Genres extends Component {
                 <tbody>
                   <tr className="border-b hover:bg-orange-100 bg-gray-100">
                     <td>
-                      {genres.map((element) => (
+                      {appointmentstates.map((element) => (
                         <p className="p-2 px-5" key={element.id}>
                           <button
                             onClick={() =>
-                              this.updateData(element.id, element.pers_gen_des)
+                              this.updateData(element.id, element.cita_est_des)
                             }
                             className="mr-3 text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded"
                           >
@@ -103,9 +107,9 @@ class Genres extends Component {
                       ))}
                     </td>
                     <td>
-                      {genres.map((element) => (
+                      {appointmentstates.map((element) => (
                         <p className="p-2 px-5" key={element.id}>
-                          {element.pers_gen_des}
+                          {element.cita_est_des}
                         </p>
                       ))}
                     </td>
@@ -120,4 +124,4 @@ class Genres extends Component {
   }
 }
 
-export default withRouter(Genres);
+export default withRouter(Appointmentstates);

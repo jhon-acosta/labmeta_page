@@ -24,14 +24,26 @@ import Patienthome from "./pages/appointment_system/patient/patienthome";
 import Patientupdate from "./pages/appointment_system/patient/patientupdate";
 import Patientupdatepassword from "./pages/appointment_system/patient/patientupdatepassword";
 // APPOINMENT SYSTEM ROUTES - ADMINISTRATION
-import Adminlogin from "./pages/appointment_system/administration/adminlogin";
-import Adminhome from "./pages/appointment_system/administration/adminhome";
-import Addemployee from "./pages/appointment_system/administration/addemployee";
-import Employees from "./pages/appointment_system/administration/employees";
-import Updateemployee from "./pages/appointment_system/administration/updateemployee";
-import Patients from "./pages/appointment_system/administration/patients";
-import Genres from "./pages/appointment_system/administration/genres";
-import Peopletype from "./pages/appointment_system/administration/peopletype";
+import Adminlogin from "./pages/appointment_system/administration/login";
+import Adminhome from "./pages/appointment_system/administration/home";
+import Addemployee from "./pages/appointment_system/administration/pages/employees/addemployee";
+import Employees from "./pages/appointment_system/administration/pages/employees/employees";
+import Updateemployee from "./pages/appointment_system/administration/pages/employees/updateemployee";
+import Addpatient from "./pages/appointment_system/administration/pages/patients/addpatient";
+import Patients from "./pages/appointment_system/administration/pages/patients/patients";
+import Updatepatient from "./pages/appointment_system/administration/pages/patients/updatepatient";
+import Addgenre from "./pages/appointment_system/administration/parameters/genres/addgenre";
+import Genres from "./pages/appointment_system/administration/parameters/genres/genres";
+import Updategenre from "./pages/appointment_system/administration/parameters/genres/updategenre";
+import Addpeopletype from "./pages/appointment_system/administration/parameters/peopletypes/addpeopletype";
+import Peopletypes from "./pages/appointment_system/administration/parameters/peopletypes/peopletypes";
+import Updatepeopletype from "./pages/appointment_system/administration/parameters/peopletypes/updatepeopletype";
+import Identificationtypes from "./pages/appointment_system/administration/parameters/identificationtypes";
+import Appointmentstates from "./pages/appointment_system/administration/parameters/appointmentstates";
+import Services from "./pages/appointment_system/administration/parameters/services";
+import Addappointmentschedule from "./pages/appointment_system/administration/parameters/appointmentschedules/addappointmentschedule";
+import Appointmentschedules from "./pages/appointment_system/administration/parameters/appointmentschedules/appointmentschedules";
+import Updateappointmentschedule from "./pages/appointment_system/administration/parameters/appointmentschedules/updateappointmentschedule";
 
 render(
   <Router>
@@ -50,16 +62,50 @@ render(
       <Route exact path="/patientregister" component={Patientregister} />
       <Route exact path="/patienthome" component={Patienthome} />
       <Route exact path="/patientupdate" component={Patientupdate} />
-      <Route exact path="/patientupdatepassword" component={Patientupdatepassword} />
+      <Route
+        exact
+        path="/patientupdatepassword"
+        component={Patientupdatepassword}
+      />
       {/* APPOINMENT SYSTEM ROUTES - ADMINISTRATION */}
-      <Route exact path="/adminlogin" component={Adminlogin} />
-      <Route exact path="/adminhome" component={Adminhome} />
-      <Route path="/addemployee" component={Addemployee} />
-      <Route path="/employees" component={Employees} />
-      <Route path="/updateemployee" component={Updateemployee} />
-      <Route path="/patients" component={Patients} />
-      <Route path="/genres" component={Genres} />
-      <Route path="/peopletype" component={Peopletype} />
+      <Route exact path="/admin/login" component={Adminlogin} />
+      <Route exact path="/admin/home" component={Adminhome} />
+      <Route path="/admin/addemployee" component={Addemployee} />
+      <Route path="/admin/employees" component={Employees} />
+      <Route path="/admin/updateemployee" component={Updateemployee} />
+      <Route path="/admin/addpatient" component={Addpatient} />
+      <Route path="/admin/patients" component={Patients} />
+      <Route path="/admin/updatepatient" component={Updatepatient} />
+      <Route path="/admin/parameters/addgenre" component={Addgenre} />
+      <Route path="/admin/parameters/genres" component={Genres} />
+      <Route path="/admin/parameters/updategenre" component={Updategenre} />
+      <Route path="/admin/parameters/addpeopletype" component={Addpeopletype} />
+      <Route path="/admin/parameters/peopletypes" component={Peopletypes} />
+      <Route
+        path="/admin/parameters/updatepeopletype"
+        component={Updatepeopletype}
+      />
+      <Route
+        path="/admin/parameters/identificationtypes"
+        component={Identificationtypes}
+      />
+      <Route
+        path="/admin/parameters/appointmentstates"
+        component={Appointmentstates}
+      />
+      <Route path="/admin/parameters/services" component={Services} />
+      <Route
+        path="/admin/parameters/addappointmentschedule"
+        component={Addappointmentschedule}
+      />
+      <Route
+        path="/admin/parameters/appointmentschedules"
+        component={Appointmentschedules}
+      />
+      <Route
+        path="/admin/parameters/updateappointmentschedule"
+        component={Updateappointmentschedule}
+      />
     </Switch>
   </Router>,
   document.getElementById("root")
