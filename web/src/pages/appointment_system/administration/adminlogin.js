@@ -8,7 +8,7 @@ class AdminLogin extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      pers_cor_ele: "admin@gmail.com",
+      pers_cor_ele: "johao@gmail.com",
       pers_cla: "1234",
     };
   }

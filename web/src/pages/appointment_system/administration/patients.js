@@ -8,7 +8,7 @@ import Header from "./components/Header";
 
 const API = "http://localhost:5000/labmeta/";
 
-class Employees extends Component {
+class Patients extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -17,15 +17,15 @@ class Employees extends Component {
         persona_nombre: "Nombre",
         persona_email: "Correo Electrónico",
       },
-      employees: [],
+      patients: [],
     };
   }
 
   componentDidMount() {
     axios
-      .get(`${API}persona?pers_tip_id=3`)
+      .get(`${API}persona?pers_tip_id=2`)
       .then((response) => {
-        this.setState({ employees: response.data.datos });
+        this.setState({ patients: response.data.datos });
       })
       .catch((error) => {
         console.log(error);
@@ -54,7 +54,7 @@ class Employees extends Component {
     localStorage.setItem("pers_gen_id", p_pers_gen_id);
     localStorage.setItem("pers_cor_ele", p_pers_cor_ele);
     localStorage.setItem("pers_fot", p_pers_fot);
-    this.props.history.push("/updateemployee");
+    this.props.history.push("/updatepatient");
   };
 
   deleteData = (value) => {
@@ -74,15 +74,13 @@ class Employees extends Component {
           title: "Eliminado exitosamente!",
           showConfirmButton: false,
           timer: 1000,
-        }).then(() =>
-          window.location.assign("http://localhost:3000/employees")
-        );
+        }).then(() => window.location.assign("http://localhost:3000/patients"));
       }
     });
   };
 
   render() {
-    const { employees } = this.state;
+    const { patients } = this.state;
     return (
       <div>
         <Sidebar />
@@ -90,7 +88,7 @@ class Employees extends Component {
         <div className="flex flex-col ml-48 p-4">
           <div className="py-4">
             <div className="justify-center my-5 select-none flex">
-              <p className="mt-5 text-center mr-10 text-2xl">Empleados.</p>
+              <p className="mt-5 text-center mr-10 text-2xl">Pacientes.</p>
             </div>
             <div className="px-3 py-4 flex justify-center">
               <table className="w-full text-md bg-white shadow-md rounded mb-4 text-center">
@@ -112,7 +110,7 @@ class Employees extends Component {
                 <tbody>
                   <tr className="border-b hover:bg-orange-100 bg-gray-100">
                     <td>
-                      {employees.map((element) => (
+                      {patients.map((element) => (
                         <p className="p-2 px-5" key={element.id}>
                           <button
                             onClick={() =>
@@ -126,9 +124,7 @@ class Employees extends Component {
                                 element.pers_dir,
                                 element.pers_gen_id,
                                 element.pers_cor_ele,
-                                element.pers_cla,
-                                element.pers_fot,
-                                element.pers_tip_id
+                                element.pers_fot
                               )
                             }
                             className="mr-3 text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded"
@@ -145,21 +141,21 @@ class Employees extends Component {
                       ))}
                     </td>
                     <td>
-                      {employees.map((element) => (
+                      {patients.map((element) => (
                         <p className="p-2 px-5" key={element.id}>
                           {element.pers_ide}
                         </p>
                       ))}
                     </td>
                     <td>
-                      {employees.map((element) => (
+                      {patients.map((element) => (
                         <p className="p-2 px-5" key={element.id}>
                           {element.pers_nom}
                         </p>
                       ))}
                     </td>
                     <td>
-                      {employees.map((element) => (
+                      {patients.map((element) => (
                         <p className="p-2 px-5" key={element.id}>
                           {element.pers_cor_ele}
                         </p>
@@ -176,4 +172,4 @@ class Employees extends Component {
   }
 }
 
-export default withRouter(Employees);
+export default withRouter(Patients);

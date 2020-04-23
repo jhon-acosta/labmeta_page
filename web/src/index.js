@@ -27,6 +27,9 @@ import Adminhome from "./pages/appointment_system/administration/adminhome";
 import Addemployee from "./pages/appointment_system/administration/addemployee";
 import Employees from "./pages/appointment_system/administration/employees";
 import Updateemployee from "./pages/appointment_system/administration/updateemployee";
+import Patients from "./pages/appointment_system/administration/patients";
+import Genres from "./pages/appointment_system/administration/genres";
+import Peopletype from "./pages/appointment_system/administration/peopletype";
 
 render(
   <Router>
@@ -50,6 +53,9 @@ render(
       <Route path="/addemployee" component={Addemployee} />
       <Route path="/employees" component={Employees} />
       <Route path="/updateemployee" component={Updateemployee} />
+      <Route path="/patients" component={Patients} />
+      <Route path="/genres" component={Genres} />
+      <Route path="/peopletype" component={Peopletype} />
     </Switch>
   </Router>,
   document.getElementById("root")

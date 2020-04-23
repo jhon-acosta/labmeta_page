@@ -45,7 +45,10 @@ class Sidebar extends Component {
               <i className="fas fa-angle-right ml-2"></i>
             </button>
             <div className="hidden group-hover:block absolute xl:relative w-full bg-gray-900 z-50 xl:z-auto border-gray-600">
-              <button className="w-full block text-left xl:flex xl:items-center shadow xl:shadow-none py-3 px-3 xl:px-4 border-l-4 border-transparent hover:text-blue-dark text-xs hover:bg-gray-800">
+              <button
+                className="w-full block text-left xl:flex xl:items-center shadow xl:shadow-none py-3 px-3 xl:px-4 border-l-4 border-transparent hover:text-blue-dark text-xs hover:bg-gray-800"
+                onClick={() => this.props.history.push("/patients")}
+              >
                 <i className="fas fa-play mr-2 ml-4"></i>
                 Administrar pacientes
               </button>
@@ -60,13 +63,19 @@ class Sidebar extends Component {
 
           <h1 className="text-center text-bold">Parámetros</h1>
           <div className="group relative h-full py-1">
-            <button className="w-full block xl:flex xl:items-center text-center xl:text-left xl:shadow-none py-6 xl:py-2 xl:px-4 border-l-4 hover:bg-gray-800">
+            <button
+              className="w-full block xl:flex xl:items-center text-center xl:text-left xl:shadow-none py-6 xl:py-2 xl:px-4 border-l-4 hover:bg-gray-800"
+              onClick={() => this.props.history.push("/genres")}
+            >
               <i className="fas fa-puzzle-piece mr-2"></i>
               <div className="text-xs">Géneros</div>
             </button>
           </div>
           <div className="group relative h-full py-1">
-            <button className="w-full block xl:flex xl:items-center text-center xl:text-left xl:shadow-none py-6 xl:py-2 xl:px-4 border-l-4 hover:bg-gray-800">
+            <button
+              className="w-full block xl:flex xl:items-center text-center xl:text-left xl:shadow-none py-6 xl:py-2 xl:px-4 border-l-4 hover:bg-gray-800"
+              onClick={() => this.props.history.push("/peopletype")}
+            >
               <i className="fas fa-puzzle-piece mr-2"></i>
               <div className="text-xs">Tipo de personas</div>
             </button>
