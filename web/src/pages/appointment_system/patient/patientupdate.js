@@ -148,14 +148,14 @@ class PatientUpdate extends Component {
           <div className="flex">
         <div className="lg:w-full md:w-1/2 w-full h-screen  lg:p-8 md:p-12 p-4">
           <div>
-            <div className="py-1">
-              <div className="flex items-center">
+            <div className="py-2">
+              <div className="flex items-center py-2">
                 <i className="fas fa-user px-1"></i>
                 <p className="px-2">* Apellidos y nombres:</p>
               </div>
               <div>
                 <input
-                  className="border-2 h-10 w-full rounded-lg px-4"
+                  className="border-2 h-10 w-3/6 rounded-lg px-4"
                   placeHolder="Apellidos y nombres"
                   type="text"
                   name="pers_nom"
@@ -166,7 +166,7 @@ class PatientUpdate extends Component {
               </div>
             </div>
             <div className="py-1">
-              <div className="flex items-center">
+              <div className="flex items-center py-2">
                 <i className="fas fa-user px-1"></i>
                 <p className="px-2">* Identificación:</p>
               </div>
@@ -241,13 +241,13 @@ class PatientUpdate extends Component {
               />
             </div> */}
             <div className="py-1">
-              <div className="flex items-center py-1">
+              <div className="flex items-center py-2">
                 <i className="fas fa-user px-1"></i>
                 <p className="px-2">* Correo Electrónico:</p>
               </div>
               <div>
                 <input
-                  className="border-2 h-10 w-full rounded-lg px-4"
+                  className="border-2 h-10 w-3/6 rounded-lg px-4"
                   placeHolder="ejemplo@gmail.com"
                   type="email"
                   name="pers_cor_ele"
@@ -267,7 +267,7 @@ class PatientUpdate extends Component {
               </div> */}
           </div>
           <div>
-            <div className="flex justify-center py-8">
+            <div className="flex justify-start py-8">
               <button
                 className="bg-yellow-500 rounded-lg hover:bg-yellow-400 p-3 mr-2"
                 onClick={this.registerUser}

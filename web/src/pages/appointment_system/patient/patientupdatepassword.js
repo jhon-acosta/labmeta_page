@@ -143,12 +143,12 @@ class PatientUpdatePassword extends Component {
                         <div className="lg:w-full md:w-1/2 w-full lg:p-8 md:p-12 p-4">
                             <div>
 
-                                <div className="flex items-center py-1">
+                                <div className="flex items-center py-2">
                                     <i className="fas fa-user px-1"></i>
                                     <p className="px-2">* Contraseña Antigua:</p>
                                 </div>
                                 <div className="flex">
-                                    <div className="px-1 w-full">
+                                    <div className="px-1 w-3/6">
                                         <input
                                             className="border-2 h-10 w-full rounded-lg px-4"
                                             placeHolder="Contraseña"
@@ -168,14 +168,14 @@ class PatientUpdatePassword extends Component {
                                         />
                                       </div> */}
                                 </div>
-                                <div className="flex items-center py-1">
+                                <div className="flex items-center py-2">
                                     <i className="fas fa-user px-1"></i>
                                     <p className="px-2">* Contraseña Nueva:</p>
                                 </div>
                                 <div className="flex">
                                     <div className="px-1 w-full">
                                         <input
-                                            className="border-2 h-10 w-full rounded-lg px-4"
+                                            className="border-2 h-10 w-3/6 rounded-lg px-4"
                                             placeHolder="Contraseña"
                                             type="password"
                                             name="pers_cla"
@@ -184,14 +184,14 @@ class PatientUpdatePassword extends Component {
                                         />
                                     </div>
                                     </div>  
-                                    <div className="flex items-center py-1">
+                                    <div className="flex items-center py-2">
                                     <i className="fas fa-user px-1"></i>
                                     <p className="px-2">* Confirmar Contraseña:</p>
                                 </div>
                                 <div className="flex">
                                     <div className="px-1 w-full">
                                         <input
-                                            className="border-2 h-10 w-full rounded-lg px-4"
+                                            className="border-2 h-10 w-3/6 rounded-lg px-4"
                                             placeHolder="Contraseña"
                                             type="password"
                                             name="pers_cla"
@@ -202,7 +202,7 @@ class PatientUpdatePassword extends Component {
                                     </div>
                             </div>
                             <div>
-                                <div className="flex justify-center py-8">
+                                <div className="flex justify-start py-8">
                                     <button
                                         className="bg-yellow-500 rounded-lg hover:bg-yellow-400 p-3 mr-2"
                                         onClick={this.registerUser}

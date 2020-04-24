@@ -10,6 +10,13 @@ class Menu extends Component {
                     <img src={logo} alt="logo" className="h-16" />
                 </div>
                 <button
+                    className="bg-green-400 lg:text-xs w-full h-16 md:text-xl text-sm px-4 text-left"
+                >
+                    <p>
+                    MENU PRINCICIPAL LABMETA S.A
+                    </p>
+                </button>
+                <button
                     className="lg:text-xl w-full h-16 md:text-xl text-sm px-4 hover:bg-green-500 hover:text-white text-left transition ease-in-out duration-500 "
                     onClick={() => this.props.history.push("/patienthome")}
                 >
@@ -19,7 +26,7 @@ class Menu extends Component {
                 </button>
                 <button
                     className="lg:text-xl w-full h-16 md:text-xl text-sm px-4 hover:bg-green-500 hover:text-white text-left transition ease-in-out duration-500 "
-                    onClick={() => this.props.history.push("/whoweare")}
+                    onClick={() => this.props.history.push("/patientreserve")}
                 >
                     <p>
                         <i className="fas fa-clipboard-list px-1"></i>Reservar una Cita
@@ -27,7 +34,7 @@ class Menu extends Component {
                 </button>
                 <button
                     className="lg:text-xl w-full h-16 md:text-xl text-sm px-4 hover:bg-green-500 hover:text-white  text-left transition ease-in-out duration-500 "
-                    onClick={() => this.props.history.push("/whoweare")}
+                    onClick={() => this.props.history.push("/clinichistory")}
                 >
                     <p>
                         <i className="fas fa-list px-1"></i>Historial Clínico
