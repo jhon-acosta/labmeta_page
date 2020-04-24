@@ -73,7 +73,7 @@ class PatientHome extends Component {
               <p className="py-2 text-xl font-bold">Mis citas</p>
               <button
                 className="text-center hover:text-white w-64"
-                onClick={() => this.props.history.push("/")}
+                onClick={() => this.props.history.push("/clinichistory")}
               >
                 Ver historial de citas
             </button>
@@ -83,7 +83,7 @@ class PatientHome extends Component {
               <p className="py-2 text-xl font-bold">Reserve mi cita</p>
               <button
                 className="text-center hover:text-white w-64"
-                onClick={() => this.props.history.push("/")}
+                onClick={() => this.props.history.push("/patientreserve")}
               >
                 Reservar una cita
             </button>

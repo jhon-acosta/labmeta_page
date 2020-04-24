@@ -161,7 +161,7 @@ class Reserve extends Component {
                                     </select>
                                 </div>
                             </div>
-                            <div className="flex justify-center py-8">
+                            <div className="flex justify-start py-8">
                             <button
                                 className="bg-yellow-500 rounded-lg hover:bg-yellow-400 p-3 mr-2"
                                 onClick={this.registerUser}
