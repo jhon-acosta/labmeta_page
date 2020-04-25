@@ -34,15 +34,22 @@ import Updateemployee from "./pages/appointment_system/administration/pages/empl
 import Addpatient from "./pages/appointment_system/administration/pages/patients/addpatient";
 import Patients from "./pages/appointment_system/administration/pages/patients/patients";
 import Updatepatient from "./pages/appointment_system/administration/pages/patients/updatepatient";
+import appointmentHistory from "./pages/appointment_system/administration/pages/appointmentHistory";
 import Addgenre from "./pages/appointment_system/administration/parameters/genres/addgenre";
 import Genres from "./pages/appointment_system/administration/parameters/genres/genres";
 import Updategenre from "./pages/appointment_system/administration/parameters/genres/updategenre";
 import Addpeopletype from "./pages/appointment_system/administration/parameters/peopletypes/addpeopletype";
 import Peopletypes from "./pages/appointment_system/administration/parameters/peopletypes/peopletypes";
 import Updatepeopletype from "./pages/appointment_system/administration/parameters/peopletypes/updatepeopletype";
-import Identificationtypes from "./pages/appointment_system/administration/parameters/identificationtypes";
-import Appointmentstates from "./pages/appointment_system/administration/parameters/appointmentstates";
-import Services from "./pages/appointment_system/administration/parameters/services";
+import Addidentificationtype from "./pages/appointment_system/administration/parameters/identificationtypes/addidentificationtype";
+import Identificationtypes from "./pages/appointment_system/administration/parameters/identificationtypes/identificationtypes";
+import Updateidentificationtype from "./pages/appointment_system/administration/parameters/identificationtypes/updateidentificationtype";
+import Addappointmentstate from "./pages/appointment_system/administration/parameters/appointmentstates/addappointmentstate";
+import Appointmentstates from "./pages/appointment_system/administration/parameters/appointmentstates/appointmentstates";
+import Updateappointmentstate from "./pages/appointment_system/administration/parameters/appointmentstates/updateappointmentstate";
+import Addservice from "./pages/appointment_system/administration/parameters/services/addservice";
+import Services from "./pages/appointment_system/administration/parameters/services/services";
+import Updateservice from "./pages/appointment_system/administration/parameters/services/updateservice";
 import Addappointmentschedule from "./pages/appointment_system/administration/parameters/appointmentschedules/addappointmentschedule";
 import Appointmentschedules from "./pages/appointment_system/administration/parameters/appointmentschedules/appointmentschedules";
 import Updateappointmentschedule from "./pages/appointment_system/administration/parameters/appointmentschedules/updateappointmentschedule";
@@ -69,8 +76,8 @@ render(
         path="/patientupdatepassword"
         component={Patientupdatepassword}
       />
-       <Route exact path="/patientreserve" component={Reserve} />
-       <Route exact path="/clinichistory" component={Clinichistory} />
+      <Route exact path="/patientreserve" component={Reserve} />
+      <Route exact path="/clinichistory" component={Clinichistory} />
       {/* APPOINMENT SYSTEM ROUTES - ADMINISTRATION */}
       <Route exact path="/admin/login" component={Adminlogin} />
       <Route exact path="/admin/home" component={Adminhome} />
@@ -80,6 +87,7 @@ render(
       <Route path="/admin/addpatient" component={Addpatient} />
       <Route path="/admin/patients" component={Patients} />
       <Route path="/admin/updatepatient" component={Updatepatient} />
+      <Route path="/admin/appointmenthistory" component={appointmentHistory} />
       <Route path="/admin/parameters/addgenre" component={Addgenre} />
       <Route path="/admin/parameters/genres" component={Genres} />
       <Route path="/admin/parameters/updategenre" component={Updategenre} />
@@ -90,14 +98,32 @@ render(
         component={Updatepeopletype}
       />
       <Route
+        path="/admin/parameters/addidentificationtype"
+        component={Addidentificationtype}
+      />
+      <Route
         path="/admin/parameters/identificationtypes"
         component={Identificationtypes}
+      />
+      <Route
+        path="/admin/parameters/updateidentificationtype"
+        component={Updateidentificationtype}
+      />
+      <Route
+        path="/admin/parameters/addappointmentstate"
+        component={Addappointmentstate}
       />
       <Route
         path="/admin/parameters/appointmentstates"
         component={Appointmentstates}
       />
+      <Route
+        path="/admin/parameters/updateappointmentstate"
+        component={Updateappointmentstate}
+      />
+      <Route path="/admin/parameters/addservice" component={Addservice} />
       <Route path="/admin/parameters/services" component={Services} />
+      <Route path="/admin/parameters/updateservice" component={Updateservice} />
       <Route
         path="/admin/parameters/addappointmentschedule"
         component={Addappointmentschedule}

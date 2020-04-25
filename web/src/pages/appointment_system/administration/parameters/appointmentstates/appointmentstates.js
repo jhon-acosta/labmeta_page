@@ -3,37 +3,37 @@ import { withRouter } from "react-router-dom";
 import Swal from "sweetalert2";
 import axios from "axios";
 
-import Sidebar from "../components/Sidebar";
-import Header from "../components/Header";
+import Sidebar from "../../components/Sidebar";
+import Header from "../../components/Header";
 
 const API = "http://localhost:5000/labmeta/";
 
-class Identificationtypes extends Component {
+class Appointmentstates extends Component {
   constructor(props) {
     super(props);
     this.state = {
       table_header: {
-        pers_tip_ide_des: "Descripción",
+        cita_est_des: "Descripción",
       },
-      Identificationtypes: [],
+      appointmentstates: [],
     };
   }
 
   componentDidMount() {
     axios
-      .get(`${API}persona_tipo_identificacione`)
+      .get(`${API}cita_estado`)
       .then((response) => {
-        this.setState({ Identificationtypes: response.data.datos });
+        this.setState({ appointmentstates: response.data.datos });
       })
       .catch((error) => {
         console.log(error);
       });
   }
 
-  updateData = (p_id, p_pers_tip_ide_des) => {
+  updateData = (p_id, p_cita_est_des) => {
     localStorage.setItem("id", p_id);
-    localStorage.setItem("pers_tip_ide_des", p_pers_tip_ide_des);
-    this.props.history.push("/updateidentificationtypes");
+    localStorage.setItem("cita_est_des", p_cita_est_des);
+    this.props.history.push("/admin/parameters/updateappointmentstate");
   };
 
   deleteData = (value) => {
@@ -45,7 +45,7 @@ class Identificationtypes extends Component {
       cancelButtonText: "Cancelar",
     }).then((result) => {
       if (result.value) {
-        axios.delete(`${API}persona_tipo_identificacione?id=${value}`, {
+        axios.delete(`${API}cita_estado?id=${value}`, {
           data: { id: value },
         });
         Swal.fire({
@@ -54,14 +54,16 @@ class Identificationtypes extends Component {
           showConfirmButton: false,
           timer: 1000,
         }).then(() =>
-          window.location.assign("http://localhost:3000/identificationtypes")
+          window.location.assign(
+            "http://localhost:3000/admin/parameters/appointmentstates"
+          )
         );
       }
     });
   };
 
   render() {
-    const { Identificationtypes } = this.state;
+    const { appointmentstates } = this.state;
     return (
       <div>
         <Sidebar />
@@ -70,7 +72,7 @@ class Identificationtypes extends Component {
           <div className="py-4">
             <div className="justify-center my-5 select-none flex">
               <p className="mt-5 text-center mr-10 text-2xl">
-                Tipo de identificaciones.
+                Estados de citas.
               </p>
             </div>
             <div className="px-3 py-4 flex justify-center">
@@ -79,7 +81,7 @@ class Identificationtypes extends Component {
                   <tr>
                     <th></th>
                     <th className="p-3 px-5">
-                      {this.state.table_header.pers_tip_ide_des}
+                      {this.state.table_header.cita_est_des}
                     </th>
                   </tr>
                 </thead>
@@ -87,14 +89,11 @@ class Identificationtypes extends Component {
                 <tbody>
                   <tr className="border-b hover:bg-orange-100 bg-gray-100">
                     <td>
-                      {Identificationtypes.map((element) => (
+                      {appointmentstates.map((element) => (
                         <p className="p-2 px-5" key={element.id}>
                           <button
                             onClick={() =>
-                              this.updateData(
-                                element.id,
-                                element.pers_tip_ide_des
-                              )
+                              this.updateData(element.id, element.cita_est_des)
                             }
                             className="mr-3 text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded"
                           >
@@ -110,9 +109,9 @@ class Identificationtypes extends Component {
                       ))}
                     </td>
                     <td>
-                      {Identificationtypes.map((element) => (
+                      {appointmentstates.map((element) => (
                         <p className="p-2 px-5" key={element.id}>
-                          {element.pers_tip_ide_des}
+                          {element.cita_est_des}
                         </p>
                       ))}
                     </td>
@@ -127,4 +126,4 @@ class Identificationtypes extends Component {
   }
 }
 
-export default withRouter(Identificationtypes);
+export default withRouter(Appointmentstates);

@@ -6,13 +6,15 @@ class Sidebar extends Component {
     return (
       <div className="w-56 mt-12 h-full bg-gray-900 text-white fixed">
         <div className="py-2">
-          <div className="h-full py-1">
+          <div className="group relative h-full py-1">
             <button
-              className="w-full block lg:flex lg:items-center text-center lg:text-left lg:shadow-none py-6 lg:py-2 lg:px-4 border-l-4 hover:bg-gray-800"
-              onClick={() => this.props.history.push("/admin/home")}
+              className="w-full block xl:flex xl:items-center text-center xl:text-left xl:shadow-none py-6 xl:py-2 xl:px-4 border-l-4 hover:bg-gray-800"
+              onClick={() =>
+                this.props.history.push("/admin/appointmenthistory")
+              }
             >
-              <i className="fas fa-home mr-2"></i>
-              <div className="text-xs">Inicio</div>
+              <i className="fas fa-clock mr-2"></i>
+              <div className="text-xs">Historial de citas</div>
             </button>
           </div>
           <div className="group relative h-full py-1">
@@ -29,7 +31,7 @@ class Sidebar extends Component {
                 className="w-full block text-left xl:flex xl:items-center shadow xl:shadow-none py-3 px-3 xl:px-4 border-l-4 border-transparent hover:text-blue-dark text-xs hover:bg-gray-800"
                 onClick={() => this.props.history.push("/admin/addemployee")}
               >
-                <i className="fas fa-play mr-2 ml-4"></i>
+                <i className="fas fa-plus-circle mr-2 ml-4"></i>
                 Añadir nuevo empleado
               </button>
             </div>
@@ -48,16 +50,10 @@ class Sidebar extends Component {
                 className="w-full block text-left xl:flex xl:items-center shadow xl:shadow-none py-3 px-3 xl:px-4 border-l-4 border-transparent hover:text-blue-dark text-xs hover:bg-gray-800"
                 onClick={() => this.props.history.push("/admin/addpatient")}
               >
-                <i className="fas fa-play mr-2 ml-4"></i>
+                <i className="fas fa-plus-circle mr-2 ml-4"></i>
                 Añadir nuevo paciente
               </button>
             </div>
-          </div>
-          <div className="group relative h-full py-1">
-            <button className="w-full block xl:flex xl:items-center text-center xl:text-left xl:shadow-none py-6 xl:py-2 xl:px-4 border-l-4 hover:bg-gray-800">
-              <i className="fas fa-clock mr-2"></i>
-              <div className="text-xs">Historial de citas</div>
-            </button>
           </div>
 
           <h1 className="text-center text-bold mt-6">Parámetros</h1>
@@ -78,7 +74,7 @@ class Sidebar extends Component {
                   this.props.history.push("/admin/parameters/addgenre")
                 }
               >
-                <i className="fas fa-play mr-2 ml-4"></i>
+                <i className="fas fa-plus-circle mr-2 ml-4"></i>
                 Agregar género
               </button>
             </div>
@@ -100,7 +96,7 @@ class Sidebar extends Component {
                   this.props.history.push("/admin/parameters/addpeopletype")
                 }
               >
-                <i className="fas fa-play mr-2 ml-4"></i>
+                <i className="fas fa-plus-circle mr-2 ml-4"></i>
                 Agregar tipo de persona
               </button>
             </div>
@@ -118,9 +114,13 @@ class Sidebar extends Component {
             <div className="hidden group-hover:block absolute xl:relative w-full bg-gray-900 z-50 xl:z-auto border-gray-600">
               <button
                 className="w-full block text-left xl:flex xl:items-center shadow xl:shadow-none py-3 px-3 xl:px-4 border-l-4 border-transparent hover:text-blue-dark text-xs hover:bg-gray-800"
-                onClick={() => this.props.history.push("/admin/home")}
+                onClick={() =>
+                  this.props.history.push(
+                    "/admin/parameters/addidentificationtype"
+                  )
+                }
               >
-                <i className="fas fa-play mr-2 ml-4"></i>
+                <i className="fas fa-plus-circle mr-2 ml-4"></i>
                 Agregar tipo de identificación
               </button>
             </div>
@@ -138,9 +138,13 @@ class Sidebar extends Component {
             <div className="hidden group-hover:block absolute xl:relative w-full bg-gray-900 z-50 xl:z-auto border-gray-600">
               <button
                 className="w-full block text-left xl:flex xl:items-center shadow xl:shadow-none py-3 px-3 xl:px-4 border-l-4 border-transparent hover:text-blue-dark text-xs hover:bg-gray-800"
-                onClick={() => this.props.history.push("/admin/home")}
+                onClick={() =>
+                  this.props.history.push(
+                    "/admin/parameters/addappointmentstate"
+                  )
+                }
               >
-                <i className="fas fa-play mr-2 ml-4"></i>
+                <i className="fas fa-plus-circle mr-2 ml-4"></i>
                 Agregar estado de cita
               </button>
             </div>
@@ -158,9 +162,11 @@ class Sidebar extends Component {
             <div className="hidden group-hover:block absolute xl:relative w-full bg-gray-900 z-50 xl:z-auto border-gray-600">
               <button
                 className="w-full block text-left xl:flex xl:items-center shadow xl:shadow-none py-3 px-3 xl:px-4 border-l-4 border-transparent hover:text-blue-dark text-xs hover:bg-gray-800"
-                onClick={() => this.props.history.push("/admin/home")}
+                onClick={() =>
+                  this.props.history.push("/admin/parameters/addservice")
+                }
               >
-                <i className="fas fa-play mr-2 ml-4"></i>
+                <i className="fas fa-plus-circle mr-2 ml-4"></i>
                 Agregar servicio
               </button>
             </div>
@@ -186,7 +192,7 @@ class Sidebar extends Component {
                   )
                 }
               >
-                <i className="fas fa-play mr-2 ml-4"></i>
+                <i className="fas fa-plus-circle mr-2 ml-4"></i>
                 Agregar horario de cita
               </button>
             </div>

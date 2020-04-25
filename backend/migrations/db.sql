@@ -89,51 +89,55 @@ insert into cita_horarios values(1,'10-12');
 insert into cita_horarios values(2,'12-14');
 
 insert into personas values(1,'Johao Perlaza',1,'1718842642','0978970998','1999-04-13','Quito',1,'admin@gmail.com','1234',1,'imagen.jpg');
-
-
-
-
+insert into personas values(2,'Jhon Acosta',1,'1234567890','0999999999','1999-05-13','Quito',1,'jhon@gmail.com','1234',1,'imagen.jpg');
+insert into personas values(3,'Roger Cedeño',1,'1234567890','0999999999','1980-01-01','Quito',1,'paciente1@gmail.com','',2,'imagen.jpg');
+insert into personas values(4,'Joel Simbaña',1,'1234567890','0999999999','1980-01-01','Quito',1,'paciente2@gmail.com','',2,'imagen.jpg');
+insert into personas values(5,'Erick Herrera',1,'1234567890','0999999999','1980-01-01','Quito',1,'paciente3@gmail.com','',2,'imagen.jpg');
+insert into personas values(6,'Juan Rojas',1,'1234567890','0999999999','1980-01-01','Quito',1,'paciente4@gmail.com','',2,'imagen.jpg');
+insert into personas values(7,'Darwin Calán',1,'1234567890','0999999999','1980-01-01','Quito',1,'doctor1@gmail.com','',3,'imagen.jpg');
+insert into personas values(8,'Carlos Ayala',1,'1234567890','0999999999','1980-01-01','Quito',1,'doctor2@gmail.com','',3,'imagen.jpg');
+insert into personas values(9,'Emily Perlaza',1,'1234567890','0999999999','1980-01-01','Quito',1,'doctor3@gmail.com','',3,'imagen.jpg');
 
 -- FUNCIONES
 
 DELIMITER $$ 
-CREATE FUNCTION F_PELICULA(P_ID INTEGER)
+CREATE FUNCTION F_PERSONA(P_ID INTEGER)
 RETURNS VARCHAR(150)
 DETERMINISTIC
 BEGIN
-    DECLARE V_PELICULA VARCHAR(150);
+    DECLARE V_PERSONA VARCHAR(150);
  
-    SELECT titulo INTO V_PELICULA
-    FROM peliculas
+    SELECT pers_nom INTO V_PERSONA
+    FROM personas
     WHERE id = P_ID;
-    RETURN V_PELICULA;
+    RETURN V_PERSONA;
 END$$
 DELIMITER ;
 
 DELIMITER $$
-CREATE FUNCTION F_SALA(P_ID INTEGER)
+CREATE FUNCTION F_SERVICIO(P_ID INTEGER)
 RETURNS VARCHAR(150)
 DETERMINISTIC
 BEGIN
-    DECLARE V_SALA VARCHAR(150);
+    DECLARE V_SERVICIO VARCHAR(150);
  
-    SELECT nombre INTO V_SALA
-    FROM salas
+    SELECT serv_nom INTO V_SERVICIO
+    FROM servicios
     WHERE id = P_ID;
-    RETURN V_SALA;
+    RETURN V_SERVICIO;
 END$$
 DELIMITER ;
 
 DELIMITER $$
-CREATE FUNCTION F_HORARIO(P_ID INTEGER)
+CREATE FUNCTION F_CITA_ESTADO(P_ID INTEGER)
 RETURNS VARCHAR(150)
 DETERMINISTIC
 BEGIN
-    DECLARE V_HORA VARCHAR(150);
+    DECLARE V_CITA_ESTADO VARCHAR(150);
  
-    SELECT hora INTO V_HORA
-    FROM horarios
+    SELECT cita_est_des INTO V_CITA_ESTADO
+    FROM cita_estados
     WHERE id = P_ID;
-    RETURN V_HORA;
+    RETURN V_CITA_ESTADO;
 END$$
 DELIMITER ;

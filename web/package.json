@@ -1,6 +1,6 @@
 {
-  "name": "web",
-  "version": "0.5.0",
+  "name": "frontend",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.13.0",

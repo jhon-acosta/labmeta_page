@@ -10,6 +10,7 @@ const persona_tipo_identificacione = require("../controllers/persona_tipo_identi
 const persona_tipo = require("../controllers/persona_tipoCRUD");
 const persona = require("../controllers/personaCRUD");
 const servicio = require("../controllers/servicioCRUD");
+const raw = require("../controllers/raw_appointmenthistoryCRUD");
 
 const router = Router();
 
@@ -73,5 +74,7 @@ router.get("/servicio", servicio.getData);
 router.post("/servicio", servicio.postData);
 router.put("/servicio", servicio.putData);
 router.delete("/servicio", servicio.deleteData);
+
+router.get("/appointmenthistory", raw.appointmenthistory);
 
 module.exports = router;

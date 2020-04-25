@@ -27,7 +27,7 @@ class AdminLogin extends Component {
         .then((response) => {
           if (response.data.mensaje === "found") {
             localStorage.setItem("pers_cor_ele_login", this.state.pers_cor_ele);
-            this.props.history.push("/admin/home");
+            this.props.history.push("/admin/appointmentHistory");
           }
         })
         .catch((error) => {

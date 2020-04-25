@@ -8,9 +8,9 @@ class AdminHome extends Component {
   render() {
     return (
       <div>
-        <Header />
         <Sidebar />
-        <div className="flex ml-56 p-4">asd</div>
+        <Header />
+        <div className="flex flex-col ml-48 p-4"></div>
       </div>
     );
   }
