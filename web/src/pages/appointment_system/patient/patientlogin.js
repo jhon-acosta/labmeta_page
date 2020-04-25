@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import axios from "axios";
 
-const API = "http://localhost:5000/labmeta/login";
+const API = "http://localhost:5000/labmeta/loginpatients";
 
 class Login extends Component {
   constructor(props) {

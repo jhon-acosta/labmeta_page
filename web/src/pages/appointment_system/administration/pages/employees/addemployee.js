@@ -191,7 +191,7 @@ class AddEmployee extends Component {
                 <div className="px-1 flex-1">
                   <input
                     className="w-full border border-gray-500 rounded py-2 px-4"
-                    type="text"
+                    type="tel"
                     name="pers_tel"
                     value={pers_tel}
                     onChange={this.changeHandler}

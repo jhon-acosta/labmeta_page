@@ -36,7 +36,8 @@ router.post("/cita", cita.postData);
 router.put("/cita", cita.putData);
 router.delete("/cita", cita.deleteData);
 
-router.post("/login", login.login);
+router.post("/loginpatients", login.loginPatients);
+router.post("/loginadmins", login.loginAdmins);
 
 router.get("/persona", persona.getData);
 router.post("/persona", persona.postData);

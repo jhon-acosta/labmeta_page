@@ -82,7 +82,7 @@ class Addservice extends Component {
                   Descripción *
                 </h1>
                 <div className="px-1 flex-1">
-                  <input
+                  <textarea
                     className="border border-gray-500 rounded py-2 px-4"
                     type="text"
                     name="serv_des"

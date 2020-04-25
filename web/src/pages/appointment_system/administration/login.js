@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
+import Swal from "sweetalert2";
 import axios from "axios";
 
-const API = "http://localhost:5000/labmeta/login";
+const API = "http://localhost:5000/labmeta/loginadmins";
 
 class AdminLogin extends Component {
   constructor(props) {
@@ -31,7 +32,13 @@ class AdminLogin extends Component {
           }
         })
         .catch((error) => {
-          alert("Datos Incorrectos");
+          Swal.fire({
+            position: "center",
+            icon: "error",
+            title: "Datos Incorrectos, vuelve a intentarlo",
+            showConfirmButton: false,
+            timer: 1500,
+          });
         });
     }
   };
