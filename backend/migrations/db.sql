@@ -61,7 +61,7 @@ create table cita_detalles(
     pers_id_doc int, foreign key (pers_id_doc) references personas(id),
     serv_id int, foreign key (serv_id) references servicios(id),
     cita_hor_id int, foreign key (cita_hor_id) references cita_horarios(id),
-    cita_det_hor_res timestamp
+    cita_det_fec_res timestamp
 );
 
 insert into persona_tipos values(1,'Administrador');
@@ -90,15 +90,13 @@ insert into cita_horarios values(2,'12-14');
 
 insert into personas values(1,'Johao Perlaza',1,'1718842642','0978970998','1999-04-13','Quito',1,'admin@gmail.com','1234',1,'imagen.jpg');
 insert into personas values(2,'Jhon Acosta',1,'1234567890','0999999999','1999-05-13','Quito',1,'jhon@gmail.com','1234',1,'imagen.jpg');
-insert into personas values(3,'Roger Cedeño',1,'1234567890','0999999999','1980-01-01','Quito',1,'paciente1@gmail.com','',2,'imagen.jpg');
-insert into personas values(4,'Joel Simbaña',1,'1234567890','0999999999','1980-01-01','Quito',1,'paciente2@gmail.com','',2,'imagen.jpg');
-insert into personas values(5,'Erick Herrera',1,'1234567890','0999999999','1980-01-01','Quito',1,'paciente3@gmail.com','',2,'imagen.jpg');
-insert into personas values(6,'Juan Rojas',1,'1234567890','0999999999','1980-01-01','Quito',1,'paciente4@gmail.com','',2,'imagen.jpg');
+insert into personas values(3,'Roger Cedeño',1,'1234567890','0999999999','1980-01-01','Quito',1,'paciente1@gmail.com','1234',2,'imagen.jpg');
+insert into personas values(4,'Joel Simbaña',1,'1234567890','0999999999','1980-01-01','Quito',1,'paciente2@gmail.com','1234',2,'imagen.jpg');
+insert into personas values(5,'Erick Herrera',1,'1234567890','0999999999','1980-01-01','Quito',1,'paciente3@gmail.com','1234',2,'imagen.jpg');
+insert into personas values(6,'Juan Rojas',1,'1234567890','0999999999','1980-01-01','Quito',1,'paciente4@gmail.com','1234',2,'imagen.jpg');
 insert into personas values(7,'Darwin Calán',1,'1234567890','0999999999','1980-01-01','Quito',1,'doctor1@gmail.com','',3,'imagen.jpg');
 insert into personas values(8,'Carlos Ayala',1,'1234567890','0999999999','1980-01-01','Quito',1,'doctor2@gmail.com','',3,'imagen.jpg');
 insert into personas values(9,'Emily Perlaza',1,'1234567890','0999999999','1980-01-01','Quito',1,'doctor3@gmail.com','',3,'imagen.jpg');
-
--- FUNCIONES
 
 DELIMITER $$ 
 CREATE FUNCTION F_PERSONA(P_ID INTEGER)
