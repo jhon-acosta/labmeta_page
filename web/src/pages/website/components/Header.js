@@ -115,11 +115,11 @@ class Header extends Component {
           </div>
           <div>
             <button
-              className="lg:text-xl md:text-xl text-sm px-4 hover:bg-green-500 hover:text-white"
+              className="bg-green-500 rounded-lg border-b-2 border-green-800lg:text-xl md:text-xl text-sm px-4 hover:bg-green-500 hover:text-white"
               onClick={() => this.props.history.push("/patientlogin")}
             >
               <i className="fas fa-user-plus px-1"></i>
-              Reserva una cita
+              Agenda tu cita
             </button>
           </div>
         </div>

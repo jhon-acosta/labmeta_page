@@ -109,7 +109,6 @@ class Clinichistory extends Component {
                                     <th className="border px-4 py-2">#</th>
                                     <th className="border px-4 py-2">Nombre del Doctor</th>
                                     <th className="border px-4 py-2">Especialización</th>
-                                    <th className="border px-4 py-2">Tarifa de consultoría</th>
                                     <th className="border px-4 py-2">Fecha/ hora de la cita</th>
                                     <th className="border px-4 py-2">Fecha de creacion de la cita</th>
                                     <th className="border px-4 py-2">Estado actual</th>
@@ -118,7 +117,7 @@ class Clinichistory extends Component {
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td className="border px-4 py-2"></td>
+                                    
                                     <td className="border px-4 py-2"></td>
                                     <td className="border px-4 py-2"></td>
                                     <td className="border px-4 py-2"></td>
@@ -128,17 +127,7 @@ class Clinichistory extends Component {
                                     <td className="border px-4 py-2"></td>
                                 </tr>
                                 <tr className="">
-                                    <td className="border px-4 py-2"></td>
-                                    <td className="border px-4 py-2"></td>
-                                    <td className="border px-4 py-2"></td>
-                                    <td className="border px-4 py-2"></td>
-                                    <td className="border px-4 py-2"></td>
-                                    <td className="border px-4 py-2"></td>
-                                    <td className="border px-4 py-2"></td>
-                                    <td className="border px-4 py-2"></td>
-                                </tr>
-                                <tr>
-                                    <td className="border px-4 py-2"></td>
+                                    
                                     <td className="border px-4 py-2"></td>
                                     <td className="border px-4 py-2"></td>
                                     <td className="border px-4 py-2"></td>
@@ -148,7 +137,17 @@ class Clinichistory extends Component {
                                     <td className="border px-4 py-2"></td>
                                 </tr>
                                 <tr>
+                                    
                                     <td className="border px-4 py-2"></td>
+                                    <td className="border px-4 py-2"></td>
+                                    <td className="border px-4 py-2"></td>
+                                    <td className="border px-4 py-2"></td>
+                                    <td className="border px-4 py-2"></td>
+                                    <td className="border px-4 py-2"></td>
+                                    <td className="border px-4 py-2"></td>
+                                </tr>
+                                <tr>
+                                    
                                     <td className="border px-4 py-2"></td>
                                     <td className="border px-4 py-2"></td>
                                     <td className="border px-4 py-2"></td>

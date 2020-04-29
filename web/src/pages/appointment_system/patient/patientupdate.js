@@ -128,6 +128,29 @@ class PatientUpdate extends Component {
     reader.readAsDataURL(file);
   };
 
+  logout = () => {
+    Swal.fire({
+      title: "¿Cerrar sesión?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Salir",
+      cancelButtonText: "Cancelar",
+    }).then((result) => {
+      if (result.value) {
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Sesión cerrada exitosamente!",
+          showConfirmButton: false,
+          timer: 1500,
+        }).then(() => {
+          localStorage.clear();
+          this.props.history.push("/");
+        });
+      }
+    });
+  };
+
   render() {
     const {
       pers_nom,

@@ -310,15 +310,7 @@ class Register extends Component {
             </p>
             <p>
               <i className="fas fa-check-circle px-1"></i>
-              Consultar tu historial Clínico.
-            </p>
-            <p>
-              <i className="fas fa-check-circle px-1"></i>
-              Verificar tus resultados desde tu hogar.
-            </p>
-            <p>
-              <i className="fas fa-check-circle px-1"></i>
-              Solicitar Exámenes a Domicilio.
+              Consultar el historial de reservas realizadas.
             </p>
           </div>
           <img src={register} alt="register" />
