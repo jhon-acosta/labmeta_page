@@ -22,7 +22,7 @@ import Patientlogin from "./pages/appointment_system/patient/patientlogin";
 import Patientregister from "./pages/appointment_system/patient/patientregister";
 import Patienthome from "./pages/appointment_system/patient/patienthome";
 import Patientupdate from "./pages/appointment_system/patient/patientupdate";
-import Patientupdatepassword from "./pages/appointment_system/patient/patientupdatepassword";
+//import Patientupdatepassword from "./pages/appointment_system/patient/patientupdatepassword";
 import Reserve from "./pages/appointment_system/patient/patientreserve";
 import Clinichistory from "./pages/appointment_system/patient/patientclinichistory";
 // APPOINMENT SYSTEM ROUTES - ADMINISTRATION
@@ -71,11 +71,11 @@ render(
       <Route exact path="/patientregister" component={Patientregister} />
       <Route exact path="/patienthome" component={Patienthome} />
       <Route exact path="/patientupdate" component={Patientupdate} />
-      <Route
+     {/*  <Route
         exact
         path="/patientupdatepassword"
         component={Patientupdatepassword}
-      />
+      /> */}
       <Route exact path="/patientreserve" component={Reserve} />
       <Route exact path="/clinichistory" component={Clinichistory} />
       {/* APPOINMENT SYSTEM ROUTES - ADMINISTRATION */}

@@ -1,8 +1,32 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
+//import axios from "axios";
+
+//const API = "http://localhost:5000/labmeta/";
 
 class Menu extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+          pers_data: [],
+          
+        };
+      }
+
+/*       componentDidMount() {
+        axios
+          .get(API + `persona?pers_cor_ele=${localStorage.getItem("pers_cor_ele_login")}`)
+          .then((response) => {
+            this.setState({ pers_data: response.data.datos });
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      } */
+
+    
     render() {
+       // const { pers_data } = this.state; 
         const logo = require("../../../../assets/logo.png");
         return (
             <div className="bg-yellow-400 float-left h-screen w-1/6 border-r-2 border-green-500">
