@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+/* import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import axios from "axios";
 
@@ -166,7 +166,7 @@ class PatientUpdatePassword extends Component {
                                         placeHolder="Confirmar contraseña"
                                         className="border-2 h-10 w-full rounded-lg px-4"
                                         />
-                                      </div> */}
+                                      </div> }
                                 </div>
                                 <div className="flex items-center py-2">
                                     <i className="fas fa-user px-1"></i>
@@ -218,4 +218,4 @@ class PatientUpdatePassword extends Component {
         );
     }
 }
-export default withRouter(PatientUpdatePassword);
+export default withRouter(PatientUpdatePassword); */

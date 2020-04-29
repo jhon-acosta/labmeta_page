@@ -1,12 +1,63 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
+import Swal from "sweetalert2";
+import axios from "axios";
+
 
 import Menu from '../patient/components/Menu'
 
+const API = "http://localhost:5000/labmeta/";
+
+
 
 class Clinichistory extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+          pers_data: [],
+        };
+      }
+    
+      componentDidMount() {
+        axios
+          .get(
+            `${API}persona?pers_cor_ele=${localStorage.getItem(
+              "pers_cor_ele_login"
+            )}`
+          )
+          .then((response) => {
+            this.setState({ pers_data: response.data.datos[0] });
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      }
+    
+      logout = () => {
+        Swal.fire({
+          title: "¿Cerrar sesión?",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonText: "Salir",
+          cancelButtonText: "Cancelar",
+        }).then((result) => {
+          if (result.value) {
+            Swal.fire({
+              position: "center",
+              icon: "success",
+              title: "Sesión cerrada exitosamente!",
+              showConfirmButton: false,
+              timer: 1500,
+            }).then(() => {
+              localStorage.clear();
+              this.props.history.push("/");
+            });
+          }
+        });
+      };
     render() {
         const paciente_img = require("../../../assets/appointment_system/patient/paciente.jpg");
+        const { pers_data } = this.state;
         return (
             <div>
                 <Menu />
@@ -15,7 +66,7 @@ class Clinichistory extends Component {
                         <button
                             className="lg:text-xl md:text-xl text-sm px-8"
                         >
-                            <p>NAME PATIENT</p>
+                           <p>  {pers_data.pers_nom}  </p>
                         </button>
                         <div className="flex px-2 py-2">
                             <img
@@ -41,14 +92,7 @@ class Clinichistory extends Component {
                                     </button>
                                     <button
                                         className="block text-left py-3 lg:px-3 md:px-3 px-1 hover:bg-green-500 text-sm w-full"
-                                        onClick={() => this.props.history.push("/patientupdatepassword")}
-                                    >
-                                        <i className="fas fa-key px-1"></i>
-                                  Cambiar Contraseña
-                                 </button>
-                                    <button
-                                        className="block text-left py-3 lg:px-3 md:px-3 px-1 hover:bg-green-500 text-sm w-full"
-                                        onClick={() => this.props.history.push("/gynecology")}
+                                        onClick={() => this.logout()}
                                     >
                                         <i className="fas fa-door-closed px-1"></i>
                                          Cerrar Sesión

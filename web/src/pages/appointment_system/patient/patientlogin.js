@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
+import Swal from "sweetalert2";
 import axios from "axios";
 
 const API = "http://localhost:5000/labmeta/loginpatients";
@@ -8,7 +9,7 @@ class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      pers_cor_ele: "",
+      pers_cor_ele: "paciente1@gmail.com",
       pers_cla: "",
     };
   }
@@ -26,11 +27,18 @@ class Login extends Component {
         .post(API, this.state)
         .then((response) => {
           if (response.data.mensaje === "found") {
+            localStorage.setItem("pers_cor_ele_login", this.state.pers_cor_ele);
             this.props.history.push("/patienthome");
           }
         })
         .catch((error) => {
-          alert("Datos Incorrectos");
+          Swal.fire({
+            position: "center",
+            icon: "error",
+            title: "Datos Incorrectos, vuelve a intentarlo",
+            showConfirmButton: false,
+            timer: 1500,
+          });
         });
     }
   };
