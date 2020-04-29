@@ -16,8 +16,8 @@ class appointmentHistory extends Component {
         pers_id_doc: "Doctor",
         pers_id_pac: "Paciente",
         serv_id: "Servicio",
-        cita_det_hor_res: "Fecha y Hora de la cita",
-        cita_hor_cre: "Fecha creación de la cita",
+        cita_det_fec_res: "Fecha de la cita",
+        cita_hor_id: "Hora de la cita",
         cita_est_id: "Estado",
       },
       appointmentHistory: [],
@@ -63,10 +63,10 @@ class appointmentHistory extends Component {
                       {this.state.table_header.serv_id}
                     </th>
                     <th className="p-3 px-5">
-                      {this.state.table_header.cita_det_hor_res}
+                      {this.state.table_header.cita_det_fec_res}
                     </th>
                     <th className="p-3 px-5">
-                      {this.state.table_header.cita_hor_cre}
+                      {this.state.table_header.cita_hor_id}
                     </th>
                     <th className="p-3 px-5">
                       {this.state.table_header.cita_est_id}
@@ -107,14 +107,14 @@ class appointmentHistory extends Component {
                     <td>
                       {appointmentHistory.map((element) => (
                         <p className="p-2 px-5" key={element.id}>
-                          {element.cita_det_hor_res}
+                          {element.cita_det_fec_res}
                         </p>
                       ))}
                     </td>
                     <td>
                       {appointmentHistory.map((element) => (
                         <p className="p-2 px-5" key={element.id}>
-                          {element.cita_hor_cre}
+                          {element.cita_hor_id}
                         </p>
                       ))}
                     </td>

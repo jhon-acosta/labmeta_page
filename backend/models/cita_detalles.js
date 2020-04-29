@@ -41,7 +41,7 @@ module.exports = db.sequelize.define("cita_detalles", {
       key: "id",
     },
   },
-  cita_det_hor_res: {
+  cita_det_fec_res: {
     type: Sequelize.STRING,
   },
 });

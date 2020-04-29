@@ -61,7 +61,7 @@ create table cita_detalles(
     pers_id_doc int, foreign key (pers_id_doc) references personas(id),
     serv_id int, foreign key (serv_id) references servicios(id),
     cita_hor_id int, foreign key (cita_hor_id) references cita_horarios(id),
-    cita_det_fec_res timestamp
+    cita_det_fec_res date
 );
 
 insert into persona_tipos values(1,'Administrador');
@@ -84,6 +84,8 @@ insert into servicios(id, serv_nom) values(5,'Hermatología');
 insert into cita_estados values(1,'Activo');
 insert into cita_estados values(2,'En proceso');
 insert into cita_estados values(3,'Cancelado');
+insert into cita_estados values(4, 'Realizado');
+insert into cita_estados values(5, 'Confirmado');
 
 insert into cita_horarios values(1,'10-12');
 insert into cita_horarios values(2,'12-14');
@@ -97,6 +99,14 @@ insert into personas values(6,'Juan Rojas',1,'1234567890','0999999999','1980-01-
 insert into personas values(7,'Darwin Calán',1,'1234567890','0999999999','1980-01-01','Quito',1,'doctor1@gmail.com','',3,'imagen.jpg');
 insert into personas values(8,'Carlos Ayala',1,'1234567890','0999999999','1980-01-01','Quito',1,'doctor2@gmail.com','',3,'imagen.jpg');
 insert into personas values(9,'Emily Perlaza',1,'1234567890','0999999999','1980-01-01','Quito',1,'doctor3@gmail.com','',3,'imagen.jpg');
+
+insert into citas values(1, 4, 6, '2020-04-22');
+insert into citas values(2, 2, 6, '2020-04-28');
+insert into citas values(3, 2, 4, '2020-04-29');
+
+insert into cita_detalles values(1,1,8,2,1,'2020-04-24');
+insert into cita_detalles values(2,2,9,4,1,'2020-05-04');
+insert into cita_detalles values(3,3,7,1,2,'2020-05-10');
 
 DELIMITER $$ 
 CREATE FUNCTION F_PERSONA(P_ID INTEGER)
@@ -137,5 +147,19 @@ BEGIN
     FROM cita_estados
     WHERE id = P_ID;
     RETURN V_CITA_ESTADO;
+END$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE FUNCTION F_CITA_HORARIO(P_ID INTEGER)
+RETURNS VARCHAR(150)
+DETERMINISTIC
+BEGIN
+    DECLARE V_CITA_HORARIO VARCHAR(150);
+ 
+    SELECT cita_hor_des INTO V_CITA_HORARIO
+    FROM cita_horarios
+    WHERE id = P_ID;
+    RETURN V_CITA_HORARIO;
 END$$
 DELIMITER ;

@@ -71,7 +71,7 @@ render(
       <Route exact path="/patientregister" component={Patientregister} />
       <Route exact path="/patienthome" component={Patienthome} />
       <Route exact path="/patientupdate" component={Patientupdate} />
-     {/*  <Route
+      {/*  <Route
         exact
         path="/patientupdatepassword"
         component={Patientupdatepassword}
